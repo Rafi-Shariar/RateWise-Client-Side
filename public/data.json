@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Professional Logo Design",
+    "companyName": "Creative Studio",
+    "website": "https://creativestudio.com",
+    "description": "We offer custom logo designs tailored to your brand identity. Perfect for startups and rebranding.",
+    "category": "Graphic Design",
+    "price": 120,
+    "addedDate": "2025-06-01",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/qFmN6byk/check-1.png"
+  },
+  {
+    "title": "Personal Fitness Coaching",
+    "companyName": "FitWithMe",
+    "website": "https://fitwithme.co",
+    "description": "1-on-1 personalized fitness coaching to help you reach your health goals from the comfort of your home.",
+    "category": "Health & Wellness",
+    "price": 250,
+    "addedDate": "2025-06-02",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/hx05z7fZ/d-letter.png"
+  },
+  {
+    "title": "Full-Stack Web Development",
+    "companyName": "CodeNest Solutions",
+    "website": "https://codenest.dev",
+    "description": "Get a high-performing, scalable full-stack web app built using modern technologies like MERN.",
+    "category": "Web Development",
+    "price": 1500,
+    "addedDate": "2025-06-03",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/jZ8n8tL9/flaticon.png"
+  },
+  {
+    "title": "SEO Audit & Optimization",
+    "companyName": "RankWise",
+    "website": "https://rankwise.io",
+    "description": "Boost your website’s visibility with our in-depth SEO audit and optimization services.",
+    "category": "Digital Marketing",
+    "price": 300,
+    "addedDate": "2025-06-01",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/7d3sksk3/logo-1.png"
+  },
+  {
+    "title": "Event Photography Service",
+    "companyName": "LensCraft Studio",
+    "website": "https://lenscraftstudio.com",
+    "description": "Capturing your special moments with creativity and professionalism. Perfect for weddings and corporate events.",
+    "category": "Photography",
+    "price": 800,
+    "addedDate": "2025-06-03",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/b5pGkXX4/logo.png"
+  },
+  {
+    "title": "Mobile App UI/UX Design",
+    "companyName": "PixelPerfect",
+    "website": "https://pixelperfect.design",
+    "description": "Stunning and intuitive UI/UX design for Android and iOS apps to ensure a seamless user experience.",
+    "category": "UI/UX Design",
+    "price": 500,
+    "addedDate": "2025-06-02",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/qFYyLXsd/mortarboard.png"
+  },
+  {
+    "title": "Academic Tutoring (Math & Physics)",
+    "companyName": "SmartLearn",
+    "website": "https://smartlearn.edu",
+    "description": "Expert tutoring in Mathematics and Physics for high school and college students with custom lesson plans.",
+    "category": "Education",
+    "price": 40,
+    "addedDate": "2025-06-04",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/Ngd9Fsfr/pfizer.png"
+  },
+  {
+    "title": "WordPress Website Customization",
+    "companyName": "WP Wizards",
+    "website": "https://wpwizards.org",
+    "description": "Customize and optimize your WordPress site for speed, SEO, and usability. Ideal for blogs and portfolios.",
+    "category": "Web Development",
+    "price": 220,
+    "addedDate": "2025-06-03",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/ZRWFjt4T/shape.png"
+  },
+  {
+    "title": "Business Legal Consultation",
+    "companyName": "LawBridge Associates",
+    "website": "https://lawbridgeassociates.com",
+    "description": "Professional legal advice for startups and small businesses including contracts, compliance, and IP protection.",
+    "category": "Legal Services",
+    "price": 650,
+    "addedDate": "2025-06-02",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/WWJwVYjL/shield-badge.png"
+  },
+  {
+    "title": "Social Media Marketing Strategy",
+    "companyName": "BuzzFlow Media",
+    "website": "https://buzzflowmedia.com",
+    "description": "Increase your brand presence with a tailored social media marketing strategy designed for your niche.",
+    "category": "Marketing",
+    "price": 450,
+    "addedDate": "2025-06-04",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/m5PfgpsW/twitch.png"
+  }
+]

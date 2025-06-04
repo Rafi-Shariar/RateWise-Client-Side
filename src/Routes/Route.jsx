@@ -8,7 +8,9 @@ const router = createBrowserRouter([
         path:'/',
         element:<RootLayout></RootLayout>,
         children:[
-            { index:true, element:<HomePage></HomePage>},
+            { index:true, element:<HomePage></HomePage>,
+                loader: ()=> fetch('http://localhost:3000/services')
+            },
             { path:'/services', element:<ServicesPage></ServicesPage>}
         ]
     }

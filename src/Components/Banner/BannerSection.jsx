@@ -13,7 +13,7 @@ const BannerSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // 4 seconds
+    autoplaySpeed: 4000, // 4 seconds
     pauseOnHover: true,
   };
     return (
