@@ -1,0 +1,22 @@
+const partners = [
+  {
+    name: "SkyServe Technologies",
+    logo: "", // Add logo URL
+    description: "Provides cloud infrastructure and API integration support, helping us scale our services securely."
+  },
+  {
+    name: "NovaReach Media",
+    logo: "", // Add logo URL
+    description: "Assists with digital outreach strategies and promotional campaigns for featured services."
+  },
+  {
+    name: "QuickPay Systems",
+    logo: "", // Add logo URL
+    description: "Offers a secure and seamless payment gateway solution for handling future transactions."
+  },
+  {
+    name: "Insightix Analytics",
+    logo: "", // Add logo URL
+    description: "Enables us to monitor user behavior and optimize the user experience with smart analytics tools."
+  }
+];

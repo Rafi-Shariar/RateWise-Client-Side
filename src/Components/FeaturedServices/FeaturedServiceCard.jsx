@@ -2,12 +2,7 @@ import React from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-const box = {
-    width: 100,
-    height: 100,
-    backgroundColor: "#9911ff",
-    borderRadius: 5,
-}
+
 const FeaturedServiceCard = ({ featured }) => {
   const { _id, image, title, description, price } = featured;
 
