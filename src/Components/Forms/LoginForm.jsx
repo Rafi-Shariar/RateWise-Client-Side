@@ -23,7 +23,7 @@ const LoginForm = () => {
           draggable: true,
         });
 
-        navigate(`${location.state? location.state : '/'} `);
+        navigate(location.state ? location.state : '/');
       })
       .catch(() => {
         Swal.fire({
@@ -60,7 +60,7 @@ const LoginForm = () => {
             draggable: true,
           });
 
-          navigate(`${location.state? location.state : '/'} `);
+          navigate(location.state ? location.state : '/');
         })
     })
     .catch(()=>{

@@ -1,13 +1,48 @@
-import React from "react";
+import React, { use, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../Context/AuthContext";
+import Swal from "sweetalert2";
 const Navbar = () => {
+  const { user, logOutUser } = use(AuthContext);
+  const [currentUser, setCurrentUser] = useState(null);
 
-    const links = <>
+  useEffect(()=>{
 
-        <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/services'}>Services</NavLink>
+    fetch(`http://localhost:3000/user/${user?.email}`)
+    .then(res => res.json())
+    .then(data =>{
+      setCurrentUser(data);
+    })
+  }, [user])
+
+
+  const links = (
+    <>
+      <NavLink to={"/"}>Home</NavLink>
+      <NavLink to={"/services"}>Services</NavLink>
     </>
+  );
+
+  const loggedInLinks = (
+    <>
+      <NavLink to={"/"}>Home</NavLink>
+      <NavLink to={"/services"}>Services</NavLink>
+      <NavLink to={"/addservices"}>Add Service</NavLink>
+      <NavLink to={"/myservices"}>My Services</NavLink>
+      <NavLink to={"/myreviews"}>My Reviews</NavLink>
+    </>
+  );
+
+  const handleLogOut = () => {
+    logOutUser().then(() => {
+      Swal.fire({
+        title: "You are Logged Out!",
+        icon: "success",
+        draggable: true,
+      });
+    });
+  };
   return (
     <div className="navbar bg-base-100 shadow-lg sticky top-0 z-40">
       <div className="navbar-start">
@@ -31,26 +66,53 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {/* Mobile */}
-            {links}
+            {user ? loggedInLinks : links}
           </ul>
         </div>
         <div className="flex items-center gap-2">
-            <img src={logo} alt="" className="w-7"/>
-            <Link to='/' className="text-xl text-primary lg:text-2xl" >RateWise</Link>
+          <img src={logo} alt="" className="w-7" />
+          <Link to="/" className="text-xl text-primary lg:text-2xl">
+            RateWise
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-5">
-         {/* desktop */}
-         {links}
+          {/* desktop */}
+          {user ? loggedInLinks : links}
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to={'/login'} className="btn mr-3">Login</Link>
-        <Link to={'/registration'} className="btn">Register</Link>
+        {user ? (
+          <>
+          <div className="flex gap-4">
+             <div className="avatar">
+  <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
+    <img src={currentUser?.photourl} />
+  </div>
+</div>
+
+ <button onClick={handleLogOut} className="btn">
+              Logout
+            </button>
+
+          </div>
+         
+           
+          </> 
+        ) : (
+          <div>
+            <Link to="/login" className="btn mr-3">
+              Login
+            </Link>
+            <Link to="/registration" className="btn">
+              Register
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
