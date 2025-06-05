@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_apiKey,
-  authDomain: import.meta.env.VITE_authDomain,
-  projectId: import.meta.env.VITE_projectId,
-  storageBucket: import.meta.env.VITE_storageBucket,
-  messagingSenderId: import.meta.env.VITE_messagingSenderId,
-  appId: import.meta.env.VITE_appId,
+  apiKey: "AIzaSyCdgA2CGg1HC4Ja_ze28TwTCesO7Da7IKI",
+  authDomain: "a11-ratewise.firebaseapp.com",
+  projectId: "a11-ratewise",
+  storageBucket: "a11-ratewise.firebasestorage.app",
+  messagingSenderId: "196551884947",
+  appId: "1:196551884947:web:80d20b4b97d84411088d66"
 };
 
 // Initialize Firebase

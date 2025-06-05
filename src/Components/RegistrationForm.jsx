@@ -1,14 +1,42 @@
-import React from "react";
+import React, { use } from "react";
+import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const RegistrationForm = () => {
+
+  const {createUser} = use(AuthContext);
+
+
+    const handleRegistration = e =>{
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const photourl = e.target.photourl.value;
+        const password = e.target.password.value;
+
+        createUser(email,password)
+        .then((userCredentials)=>{
+          alert('registerd')
+
+        })
+        .catch(()=>{
+
+        })
+
+
+    }
   return (
     <div>
-      <form action="" className="lg:w-2/3 bg-linear-to-r from-cyan-200 to-blue-300 p-7 rounded-2xl">
+      <form action="" className="lg:w-2/3 bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl" 
+      onSubmit={handleRegistration}>
         <legend className="fieldset-legend">Name</legend>
         <input
           type="text"
           className="input w-full"
           placeholder="Enter your name..."
+          name="name"
+          required
         />
 
         <legend className="fieldset-legend">Email</legend>
@@ -16,6 +44,8 @@ const RegistrationForm = () => {
           type="email"
           className="input w-full"
           placeholder="Enter your email..."
+          name="email"
+          required
         />
 
         <legend className="fieldset-legend">PhotoURL</legend>
@@ -23,6 +53,8 @@ const RegistrationForm = () => {
           type="text"
           className="input w-full"
           placeholder="Enter your photourl..."
+          name="photourl"
+          required
         />
 
         <legend className="fieldset-legend">Password</legend>
@@ -30,17 +62,18 @@ const RegistrationForm = () => {
           type="password"
           className="input validator w-full"
           required
-          placeholder="Password"
-          minlength="8"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-          title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+          placeholder="Enter your password..."
+          minLength="6"
+          pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          title="Must be more than 6 characters, including lowercase AND uppercase letterS"
+          name="password"
         />
         <p className="validator-hint">
           Must be more than 6 characters, including uppercase and lowercase letters.
           
         </p>
-
-        <button className="btn bg-purple-500 text-white w-full mt-4">Register Now</button>
+         <Link to={'/login'}>Already have an account? <span className="font-semibold underline">Login</span></Link>
+        <button type="submit" className="btn bg-purple-500 text-white w-full mt-4 hover:bg-white hover:text-purple-700">Register Now</button>
       </form>
     </div>
   );
