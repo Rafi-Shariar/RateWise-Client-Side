@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import { Link } from "react-router";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContext";
 import Swal from "sweetalert2";
 
 const RegistrationForm = () => {

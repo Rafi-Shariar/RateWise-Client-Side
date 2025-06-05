@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Lottie from "lottie-react";
 import lottieAnimation from "../assets/Lottie/Registration.json";
-import RegistrationForm from "../Components/RegistrationForm";
+import RegistrationForm from "../Components/Forms/RegistrationForm";
 const RegistrationPage = () => {
   return (
     <div className="mt-20 p-5">
