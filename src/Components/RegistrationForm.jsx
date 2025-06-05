@@ -1,10 +1,11 @@
 import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
+import Swal from "sweetalert2";
 
 const RegistrationForm = () => {
 
-  const {createUser} = use(AuthContext);
+  const {createUser,setUser} = use(AuthContext);
 
 
     const handleRegistration = e =>{
@@ -16,11 +17,43 @@ const RegistrationForm = () => {
         const password = e.target.password.value;
 
         createUser(email,password)
-        .then((userCredentials)=>{
-          alert('registerd')
+        .then((userCredential)=>{
+          
+          const newUser = {
+            name,email,photourl
+          }
+
+          fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: { "content-type" : "application/json"},
+            body: JSON.stringify(newUser)
+
+          })
+          .then( res => res.json())
+          .then (()=>{
+
+            Swal.fire({
+              title: "You Have Been Registered",
+              icon: "success",
+              draggable: true,
+            });
+
+          })
+
+          const currentUser = userCredential.user;
+          setUser(currentUser);
+
+
 
         })
         .catch(()=>{
+
+          Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: "User All Ready Registered !! Try To Login",
+        });
 
         })
 
