@@ -6,6 +6,7 @@ import { RiHomeOfficeFill } from "react-icons/ri";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { RiMoneyDollarBoxFill } from "react-icons/ri";
+import AddReviewForm from '../Components/Forms/AddReviewForm';
 const ServiceDetailsPage = () => {
 
     const [serviceData,setServiceData] = useState(null);
@@ -68,7 +69,28 @@ const ServiceDetailsPage = () => {
                         </div>
                     </div>
 
+                   
+
                  </div>
+
+                 {/* Review Section */}
+                 <section className='p-2'>
+
+                    <h1 className='text-2xl'>Reviews</h1>
+
+                    <div className='flex flex-col lg:flex-row gap-10'>
+                        {/* User Review Section */}
+                        <section className='bg-amber-100 lg:w-2/3'>
+                            user revies
+                        </section>
+
+                        {/* Add Review Section */}
+                        <section className=' lg:w-1/3'>
+                            <AddReviewForm></AddReviewForm>
+                        </section>
+                    </div>
+
+                 </section>
 
                  </>)
             }
