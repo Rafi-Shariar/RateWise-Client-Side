@@ -7,17 +7,32 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { RiMoneyDollarBoxFill } from "react-icons/ri";
 import AddReviewForm from '../Components/Forms/AddReviewForm';
+import ReviewContainer from '../Components/Reviews/ReviewContainer';
 const ServiceDetailsPage = () => {
 
     const [serviceData,setServiceData] = useState(null);
     const [loader,setLoader] = useState(true);
     const data = useLoaderData();
+    const [reviews,setReviews] = useState(null);
+    const [companyInfo,setCompanyInfo] = useState(null);
     
 
     useEffect(()=>{
         setServiceData(data);
+
+        fetch(`http://localhost:3000/reviews/${data?._id}`)
+        .then(res => res.json())
+        .then(reviewData => {
+            setReviews(reviewData);
+            const infos = {
+                companyName : serviceData.companyName,
+                companyImage : serviceData.image
+            }
+            setCompanyInfo(infos);
+        })
+
         setLoader(false);
-    },[data])
+    },[data,reviews])
 
     
 
@@ -80,8 +95,18 @@ const ServiceDetailsPage = () => {
 
                     <div className='flex flex-col lg:flex-row gap-10'>
                         {/* User Review Section */}
-                        <section className='bg-amber-100 lg:w-2/3'>
-                            user revies
+                        <section className=' lg:w-2/3'>
+                            {
+                                reviews? 
+                                (<>
+                                    <ReviewContainer reviews={reviews} companyInfo={companyInfo}></ReviewContainer>
+                                </>) : 
+                                (<>
+                                    <div className='flex justify-center items-center h-full'>
+                                        <span className="loading loading-ring loading-xl"></span>
+                                    </div>
+                                </>)
+                            }
                         </section>
 
                         {/* Add Review Section */}

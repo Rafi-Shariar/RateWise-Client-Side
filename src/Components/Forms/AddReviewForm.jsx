@@ -18,12 +18,14 @@ const AddReviewForm = () => {
          return;
     }
 
+    
+
   }
 
   return (
     <div
       className="bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-400 to-90%
- p-5 rounded-2xl"
+ p-5 rounded-2xl shadow-2xl"
     >
       <h1 className="text-xl flex items-center gap-2">
         <FaPenAlt />
