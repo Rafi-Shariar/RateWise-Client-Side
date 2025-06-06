@@ -2,12 +2,12 @@ import React from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-
+import { BiSolidCategory } from "react-icons/bi";
 const FeaturedServiceCard = ({ featured }) => {
-  const { _id, image, title, description, price } = featured;
+  const { _id, image, title, description, price,category } = featured;
 
   return (
-    <motion.div className="shadow-lg p-5 min-h-[200px]"
+    <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl"
     whileHover={{ scale: 1.1 }}
             
             >
@@ -23,10 +23,14 @@ const FeaturedServiceCard = ({ featured }) => {
           {description.slice(0, 100)}...
         </p>
 
-        
+        <div className="border-b border-slate-300">
+          <span className="badge my-5 text-primary"> <BiSolidCategory />{category}</span>
+          
+        </div>
+
       </div>
 
-      <div className="flex justify-between items-center mt-10">
+      <div className="flex justify-between items-center mt-5">
           <span className="btn bg-base-300 border-0 text-green-700">
             {price} $
           </span>

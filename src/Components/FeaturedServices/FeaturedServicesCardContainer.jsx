@@ -9,7 +9,7 @@ const FeaturedServicesCardContainer = () => {
 
     useEffect(()=>{
 
-        fetch('http://localhost:3000/services')
+        fetch(`http://localhost:3000/services`)
         .then(res => res.json())
         .then(data =>{
             setFeaturedData(data);

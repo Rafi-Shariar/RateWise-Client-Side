@@ -16,7 +16,9 @@ const router = createBrowserRouter([
             { index:true, element:<HomePage></HomePage>,
                 loader: ()=> fetch('http://localhost:3000/services')
             },
-            { path:'/services', element:<ServicesPage></ServicesPage>},
+            { path:'/services', element:<ServicesPage></ServicesPage>,
+                loader: ()=> fetch('http://localhost:3000/allservices')
+            },
             { path:'/services/:id', element:<ServiceDetailsPage></ServiceDetailsPage>},
             { path:'/registration', element:<RegistrationPage></RegistrationPage>},
             { path:'/login', element:<LoginPage></LoginPage>},

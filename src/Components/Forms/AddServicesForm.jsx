@@ -38,7 +38,7 @@ const AddServicesForm = ({userInfo}) => {
 
     }
   return (
-    <div className="p-2">
+    <div className="p-2 my-10">
       <form
         onSubmit={handleAddService}
         action=""
