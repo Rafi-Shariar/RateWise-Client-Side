@@ -1,9 +1,46 @@
 import React from "react";
+import { format } from 'date-fns';
+import { toast, ToastContainer } from "react-toastify";
 
 const AddServicesForm = ({userInfo}) => {
+
+    const notify = () => toast('New Service Added!');
+
+    const handleAddService = e =>{
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const serviceData = Object.fromEntries(formData.entries());
+
+        const addedDate = format(new Date(), 'yyyy-MM-dd');
+
+        const newServiceData = {...serviceData,addedDate};
+        console.log(newServiceData);
+
+        //Adding data to DB
+        fetch('http://localhost:3000/addservices',{
+            method:'POST',
+            headers:{ 'content-type':'application/json' },
+            body: JSON.stringify(newServiceData)
+
+        }).then(res => res.json())
+        .then( ()=>{
+            //sweetalert
+            notify();
+            e.target.reset();
+
+        })
+
+        
+        
+
+
+    }
   return (
     <div className="p-2">
       <form
+        onSubmit={handleAddService}
         action=""
         className=" bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl lg:w-[500px]"
       >
@@ -12,7 +49,7 @@ const AddServicesForm = ({userInfo}) => {
           type="text"
           className="input w-full"
           placeholder="add company logo url..."
-          name="companylogo"
+          name="image"
           required
         />
 
@@ -30,13 +67,13 @@ const AddServicesForm = ({userInfo}) => {
           type="text"
           className="input w-full"
           placeholder="Enter your photourl..."
-          name="companyname"
+          name="companyName"
           required
         />
 
         <legend className="fieldset-legend">Website</legend>
         <input
-          type="url"
+          type="text"
           className="input w-full"
           placeholder="Enter your website..."
           name="website"
@@ -82,8 +119,9 @@ const AddServicesForm = ({userInfo}) => {
         <input
           type="text"
           className="input w-full text-slate-400"
-          name="user"
-          value={userInfo?.email}
+          name="userEmail"
+          defaultValue={userInfo?.email}
+          readOnly
         />
 
 
@@ -95,6 +133,7 @@ const AddServicesForm = ({userInfo}) => {
           Add Service
         </button>
       </form>
+      <ToastContainer/>
     </div>
   );
 };
