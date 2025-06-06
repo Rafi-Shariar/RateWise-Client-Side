@@ -1,0 +1,102 @@
+import React from "react";
+
+const AddServicesForm = ({userInfo}) => {
+  return (
+    <div className="p-2">
+      <form
+        action=""
+        className=" bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl lg:w-[500px]"
+      >
+        <legend className="fieldset-legend">Company Logo</legend>
+        <input
+          type="text"
+          className="input w-full"
+          placeholder="add company logo url..."
+          name="companylogo"
+          required
+        />
+
+        <legend className="fieldset-legend">Service title</legend>
+        <input
+          type="text"
+          className="input w-full"
+          placeholder="Enter title..."
+          name="title"
+          required
+        />
+
+        <legend className="fieldset-legend">Company Name</legend>
+        <input
+          type="text"
+          className="input w-full"
+          placeholder="Enter your photourl..."
+          name="companyname"
+          required
+        />
+
+        <legend className="fieldset-legend">Website</legend>
+        <input
+          type="url"
+          className="input w-full"
+          placeholder="Enter your website..."
+          name="website"
+          required
+        />
+
+        <legend className="fieldset-legend">Description</legend>
+        <textarea
+          type="text"
+          className="textarea w-full"
+          placeholder="Add description..."
+          name="description"
+          required
+        />
+
+        <legend className="fieldset-legend">Category</legend>
+        <select name="category" required className="input w-full">
+          <option value="">Select a category</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Content Writing">Content Writing</option>
+          <option value="Video Editing">Video Editing</option>
+          <option value="Mobile App Development">Mobile App Development</option>
+          <option value="SEO Services">SEO Services</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+          <option value="Social Media Management">
+            Social Media Management
+          </option>
+          <option value="Consulting & Strategy">Consulting & Strategy</option>
+        </select>
+
+        <legend className="fieldset-legend">Price</legend>
+        <input
+          type="number"
+          className="input w-full"
+          placeholder="Price of your service..."
+          name="price"
+          required
+        />
+
+        <legend className="fieldset-legend">Added By</legend>
+        <input
+          type="text"
+          className="input w-full text-slate-400"
+          name="user"
+          value={userInfo?.email}
+        />
+
+
+
+        <button
+          type="submit"
+          className="btn bg-purple-500 text-white w-full mt-4 hover:bg-white hover:text-purple-700"
+        >
+          Add Service
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default AddServicesForm;

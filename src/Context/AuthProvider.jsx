@@ -9,6 +9,7 @@ const AuthProvider = ({children}) => {
 
     const [user,setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+    const [userInfo, setUserInfo] = useState(null);
 
     
 
@@ -22,6 +23,13 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser)=>{
             setUser(currentUser);
+            
+            fetch(`http://localhost:3000/user/${currentUser.email}`)
+            .then(res => res.json())
+            .then(data =>{
+                setUserInfo(data);
+            })
+            
             setLoading(false);
         });
         return ()=>{
@@ -56,7 +64,8 @@ const AuthProvider = ({children}) => {
         logOutUser,
         loading,
         logInUser,
-        GoogleLogIn
+        GoogleLogIn,
+        userInfo
     }
 
     return (

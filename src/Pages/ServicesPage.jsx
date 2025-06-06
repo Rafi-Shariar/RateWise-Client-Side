@@ -3,7 +3,10 @@ import React from 'react';
 const ServicesPage = () => {
     return (
         <div>
-            Services Page
+            {/* title */}
+            <div>
+               
+            </div>
         </div>
     );
 };
