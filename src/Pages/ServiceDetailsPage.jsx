@@ -25,8 +25,8 @@ const ServiceDetailsPage = () => {
         .then(reviewData => {
             setReviews(reviewData);
             const infos = {
-                companyName : serviceData.companyName,
-                companyImage : serviceData.image
+                companyName : serviceData?.companyName,
+                companyImage : serviceData?.image
             }
             setCompanyInfo(infos);
         })
@@ -91,11 +91,12 @@ const ServiceDetailsPage = () => {
                  {/* Review Section */}
                  <section className='p-2'>
 
-                    <h1 className='text-2xl'>Reviews</h1>
+                    
 
-                    <div className='flex flex-col lg:flex-row gap-10'>
+                    <div className='flex flex-col-reverse lg:flex-row gap-10 mb-20'>
                         {/* User Review Section */}
                         <section className=' lg:w-2/3'>
+                        <h1 className='text-3xl mb-10 text-blue-900'>Reviews ({reviews?.length})</h1>
                             {
                                 reviews? 
                                 (<>
