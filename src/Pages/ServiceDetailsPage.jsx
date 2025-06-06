@@ -13,8 +13,13 @@ const ServiceDetailsPage = () => {
     const [serviceData,setServiceData] = useState(null);
     const [loader,setLoader] = useState(true);
     const data = useLoaderData();
-    const [reviews,setReviews] = useState(null);
+    const [reviews,setReviews] = useState([]);
     const [companyInfo,setCompanyInfo] = useState(null);
+    const [currentserviceID, setCurrentServiceID] = useState(null);
+
+    const addNewReviews = {reviews,setReviews};
+    
+    console.log(reviews, reviews);
     
 
     useEffect(()=>{
@@ -25,14 +30,15 @@ const ServiceDetailsPage = () => {
         .then(reviewData => {
             setReviews(reviewData);
             const infos = {
-                companyName : serviceData?.companyName,
-                companyImage : serviceData?.image
+                companyName : data?.companyName,
+                companyImage : data?.image
             }
+            setCurrentServiceID(data._id);
             setCompanyInfo(infos);
         })
 
         setLoader(false);
-    },[data,reviews])
+    },[data])
 
     
 
@@ -112,7 +118,7 @@ const ServiceDetailsPage = () => {
 
                         {/* Add Review Section */}
                         <section className=' lg:w-1/3'>
-                            <AddReviewForm></AddReviewForm>
+                            <AddReviewForm currentserviceID={currentserviceID} addNewReviews={addNewReviews}></AddReviewForm>
                         </section>
                     </div>
 

@@ -4,23 +4,60 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { AuthContext } from "../../Context/AuthContext";
 import { useLocation, useNavigate } from "react-router";
-const AddReviewForm = () => {
-  const [rating, setRating] = useState(0);
-  const {user} = use(AuthContext);
+import { format } from "date-fns";
+import Swal from "sweetalert2";
+const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
+  const [ratings, setRatings] = useState(0);
+  const { user, userInfo } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleAddReview = e =>{
+  const {reviews, setReviews} = addNewReviews;
+
+  const handleAddReview = (e) => {
     e.preventDefault();
 
-    if(!user){
-         navigate('/login', { state: location.pathname });
-         return;
+    if (!user) {
+      navigate("/login", { state: location.pathname });
+      return;
     }
 
-    
+    const serviceID = currentserviceID;
+    const userID = userInfo.email;
+    const userName = userInfo.name;
+    const userImage = userInfo.photourl;
+    const description = e.target.description.value;
+    const rating = ratings;
+    const addedDate = format(new Date(), "dd-MM-yyyy");
 
-  }
+    const newReview = {
+      serviceID,
+      userID,
+      userName,
+      userImage,
+      description,
+      rating,
+      addedDate,
+    };
+
+    fetch("http://localhost:3000/addreview", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(newReview),
+    })
+      .then((res) => res.json())
+      .then(() => {
+
+        const updatedReviewsList = [...reviews,newReview];
+        setReviews(updatedReviewsList);
+
+        
+        Swal.fire({
+          title: "Review Added!",
+          icon: "success",
+        });
+      });
+  };
 
   return (
     <div
@@ -46,13 +83,16 @@ const AddReviewForm = () => {
           <legend className="fieldset-legend">Rate your experience</legend>
           <Rating
             style={{ maxWidth: 150 }}
-            value={rating}
-            onChange={setRating}
+            value={ratings}
+            onChange={setRatings}
             required
           />
 
           <div className="flex justify-center">
-            <button type="submit" className="btn mt-5 bg-blue-700 text-white hover:bg-blue-400">
+            <button
+              type="submit"
+              className="btn mt-5 bg-blue-700 text-white hover:bg-blue-400"
+            >
               Add Review
             </button>
           </div>
