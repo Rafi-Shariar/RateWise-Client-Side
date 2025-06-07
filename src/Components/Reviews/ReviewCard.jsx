@@ -19,8 +19,8 @@ const ReviewCard = ({ review, companyInfo }) => {
       </div>
 
       {/* section 2 */}
-      <div>
-        <p className="font-extralight text-gray-700 h-[100px] p-3 italic">
+      <div className="">
+        <p className="font-extralight text-gray-700 h-[100px] p-3 italic ">
           " {description} "
         </p>
       </div>

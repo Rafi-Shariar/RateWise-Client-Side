@@ -3,6 +3,7 @@ import BannerSection from '../Components/Banner/BannerSection';
 import FeaturedServicesContainer from '../Components/FeaturedServices/FeaturedServicesContainer';
 import MeetOutPartnersContainer from '../Components/MeetOurPartners/MeetOutPartnersContainer';
 import CountUpContainer from '../Components/CountUps/CountUpContainer';
+import RecentReviewsContainer from '../Components/RecentReviews/RecentReviewsContainer';
 
 const HomePage = () => {
 
@@ -14,6 +15,7 @@ const HomePage = () => {
             <FeaturedServicesContainer></FeaturedServicesContainer>
             <MeetOutPartnersContainer></MeetOutPartnersContainer>
             <CountUpContainer></CountUpContainer>
+            <RecentReviewsContainer></RecentReviewsContainer>
         </div>
     );
 };
