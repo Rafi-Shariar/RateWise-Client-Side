@@ -19,8 +19,6 @@ const ServiceDetailsPage = () => {
 
     const addNewReviews = {reviews,setReviews};
     
-    console.log(reviews, reviews);
-    
 
     useEffect(()=>{
         setServiceData(data);
