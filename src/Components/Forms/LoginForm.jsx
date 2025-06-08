@@ -103,7 +103,7 @@ const LoginForm = () => {
           Must be more than 6 characters, including uppercase and lowercase
           letters.
         </p>
-        <Link to={"/login"}>
+        <Link to={"/registration"}>
           Don't have an account?{" "}
           <span className="font-semibold underline">Register</span>
         </Link>
