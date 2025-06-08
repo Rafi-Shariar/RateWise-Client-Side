@@ -21,7 +21,7 @@ const ReviewCard = ({review}) => {
         <div className='mx-5'>
              <div className="border rounded-2xl border-orange-100 overflow-hidden shadow-xl max-w-[250px]">
                   {/* section 1 */}
-                  <div className="flex items-center gap-2 p-3  bg-bas bg-base-200">
+                  <div className="flex items-center gap-2 p-3  bg-sky-100">
                     <div className="avatar">
                       <div className="w-12 rounded-full">
                         <img src={userImage} />

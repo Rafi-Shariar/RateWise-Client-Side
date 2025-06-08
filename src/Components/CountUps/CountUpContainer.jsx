@@ -33,7 +33,7 @@ const CountUpContainer = () => {
 
 
         {/* Matrices */}
-        <div className="my-10 flex flex-col md:flex-row justify-center gap-7 bg-slate-100 py-20 px-2 rounded-2xl">
+        <div className="my-10 flex flex-col lg:flex-row justify-center gap-7 bg-slate-100 py-20 px-2 rounded-2xl">
 
         {/* Services */}
       <div className="flex flex-col justify-center items-center bg-gradient-to-br from-white via-green-50 to-green-200 shadow-lg p-8 rounded-2xl border border-green-300 min-w-[300px] shadow-gray-400">
