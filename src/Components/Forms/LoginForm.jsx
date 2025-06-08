@@ -46,7 +46,13 @@ const LoginForm = () => {
             photourl: loggedUser.photoURL
         }
 
-        fetch('http://localhost:3000/users',{
+        // check if user Exits
+        fetch(`http://localhost:3000/userlist/${loggedUser.email}`)
+        .then(res => res.json())
+        .then((data)=>{
+          
+          if(!data || Object.keys(data).length == 0){
+             fetch('http://localhost:3000/users',{
             method:"POST",
             headers:{ 'content-type' : 'application/json'},
             body: JSON.stringify(newUser)
@@ -60,8 +66,17 @@ const LoginForm = () => {
             draggable: true,
           });
 
-          navigate(location.state ? location.state : '/');
+          
         })
+
+          }
+          
+
+        })
+
+        navigate(location.state ? location.state : '/');
+
+       
     })
     .catch(()=>{
         Swal.fire({
