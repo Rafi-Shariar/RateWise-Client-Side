@@ -11,6 +11,7 @@ const MyServicesPage = () => {
                     initial={{ x: -400, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
+                    className='p-2'
                   >
                     <h1 className="text-2xl font-semibold text-blue-900 lg:text-4xl mt-10 mb-3">
               My Services
@@ -21,7 +22,7 @@ Manage and view all the services you've added. Keep track, update details, and s
             </motion.div>
 
             {/* content */}
-            <div>
+            <div className='p-2'>
                 <MySercvicesTableContainer></MySercvicesTableContainer>
             </div>
         </div>

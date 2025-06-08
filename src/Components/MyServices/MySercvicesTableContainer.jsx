@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import { FaPenToSquare } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { AuthContext } from "../../Context/AuthContext";
+import MyServicesRow from "./MyServicesRow";
 const MySercvicesTableContainer = () => {
 
     const {userInfo} = use(AuthContext);
@@ -10,13 +11,20 @@ const MySercvicesTableContainer = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/myservices/${userInfo?.email}`)
-        .then(res => res.json())
-        .then( data => {
-            setMyservices(data);
-            setLoading(false);
+        if (userInfo?.email) {
+      setLoading(true);
+      fetch(`http://localhost:3000/myservices/${userInfo.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMyservices(data);
+          setLoading(false);
         })
-    },[])
+        .catch((error) => {
+          console.error("Failed to fetch services:", error);
+          setLoading(false);
+        });
+    }
+    },[userInfo?.email])
 
 
   return (
@@ -30,7 +38,7 @@ const MySercvicesTableContainer = () => {
               <th>Category</th>
               <th>Price</th>
               <th>Added At</th>
-              <th>Total Reviews</th>
+        
               <th>Actions</th>
               
             </tr>
@@ -91,6 +99,10 @@ const MySercvicesTableContainer = () => {
 
 
                 </>) : (<>
+
+                   {
+                    myservices.map(myservice => <MyServicesRow  myservice={myservice} key={myservice._id}></MyServicesRow>)
+                   }
                 
                 </>)
             }
