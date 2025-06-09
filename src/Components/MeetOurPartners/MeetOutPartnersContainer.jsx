@@ -34,10 +34,10 @@ const MeetOutPartnersContainer = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 bg-gradient-to-t from-indigo-100 via-white to-transparent p-5 rounded-2xl">
+        <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-2 bg-gradient-to-t from-indigo-100 via-white to-transparent p-7 rounded-2xl shadow-2xl">
           {/* Card 1 */}
           <div>
-            <div className="card bg-base-100 shadow-sm ">
+            <div className="card bg-base-100 shadow-lg border border-blue-100 ">
               <figure className="px-10 pt-10">
                 <img
                   src={logo1}
@@ -56,7 +56,7 @@ const MeetOutPartnersContainer = () => {
 
           {/* Card 2 */}
           <div>
-            <div className="card bg-base-100 shadow-sm">
+            <div className="card bg-base-100 shadow-sm shadow-lg border border-blue-100">
               <figure className="px-10 pt-10">
                 <img
                   src={logo2}
@@ -75,7 +75,7 @@ const MeetOutPartnersContainer = () => {
 
            {/* Card 3 */}
           <div>
-            <div className="card bg-base-100 shadow-sm">
+            <div className="card bg-base-100 shadow-sm shadow-lg border border-blue-100">
               <figure className="px-10 pt-10">
                 <img
                   src={logo3}
@@ -94,7 +94,7 @@ const MeetOutPartnersContainer = () => {
 
            {/* Card 4 */}
           <div>
-            <div className="card bg-base-100 shadow-sm">
+            <div className="card bg-base-100 shadow-sm shadow-lg border border-blue-100">
               <figure className="px-10 pt-10">
                 <img
                   src={logo4}
