@@ -1,0 +1,59 @@
+import React, { use, useEffect, useState } from 'react';
+import { motion } from "motion/react";
+import { AuthContext } from '../Context/AuthContext';
+import MyReviewCard from '../Components/MyReviews/MyReviewCard';
+import { Rating } from "@smastrom/react-rating";
+
+const MyReviewsPage = () => {
+
+    const {userInfo} = use(AuthContext);
+    const [loading,setLoading] = useState(true);
+    const [myreviews,setMyReviews] = useState([]);
+
+    useEffect(()=>{
+
+        fetch(`http://localhost:3000/myreviews/${userInfo?.email}`)
+        .then(res => res.json())
+        .then( (data)=>{
+            setMyReviews(data);
+            setLoading(false);
+        })
+    },[userInfo?.email])
+    return (
+        <div>
+            <motion.div
+                                initial={{ x: -400, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: "easeOut" }}
+                                className='p-2'
+                              >
+                                <h1 className="text-2xl font-semibold text-blue-900 lg:text-4xl mt-10 mb-3">
+                          Review History
+                        </h1>
+                        <p className="font-extralight text-xs lg:text-sm">
+                            Keep track of the reviews you’ve submitted across different services and platforms.           </p>
+                        
+            </motion.div>
+
+            <div className='p-2'>
+                {
+                    loading? (<>
+                        <div className="w-50 mx-auto mt-20">
+              <span className="loading loading-spinner text-success w-30 bg-blue-100"></span>
+            </div>
+                    </>):(<>
+
+                        <div className='grid grid-cols-1 gap-10 my-10'>
+                            {
+                                
+                                myreviews.map(review => <MyReviewCard key={review?._id} review={review}></MyReviewCard>)
+                            }
+                        </div>
+                    </>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default MyReviewsPage;
