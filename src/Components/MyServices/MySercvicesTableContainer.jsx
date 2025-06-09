@@ -8,6 +8,7 @@ const MySercvicesTableContainer = () => {
   const { userInfo } = use(AuthContext);
   const [loading, setLoading] = useState(true);
   const [myservices, setMyservices] = useState([]);
+  const [dataUpdated,setDataUpdated] = useState(false);
 
   useEffect(() => {
     if (userInfo?.email) {
@@ -17,13 +18,14 @@ const MySercvicesTableContainer = () => {
         .then((data) => {
           setMyservices(data);
           setLoading(false);
+          setDataUpdated(false);
         })
         .catch((error) => {
           console.error("Failed to fetch services:", error);
           setLoading(false);
         });
     }
-  }, [userInfo?.email]);
+  }, [userInfo?.email, dataUpdated]);
 
   return (
     <div>
@@ -56,6 +58,7 @@ const MySercvicesTableContainer = () => {
                       <MyServicesRow
                         myservice={myservice}
                         key={myservice._id}
+                        setDataUpdated={setDataUpdated}
                       ></MyServicesRow>
                     ))}
                   </tbody>
