@@ -10,7 +10,7 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
   const { _id,website, image, title, companyName, category, price, addedDate, description,userEmail } =
     myservice;
 
-
+    // Updating Data
     const handleUpdatedData = e =>{
       e.preventDefault();
       const form = e.target;
@@ -50,6 +50,43 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
      
     
     
+    }
+
+    //Deleting Data
+    const handleDeleteData =()=>{
+       Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        fetch(`http://localhost:3000/myservices/${_id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then( () => {
+
+          setDataUpdated(true)
+            
+            
+        })
+
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+
+
+      }
+    });
+
+
     }
 
   return (
@@ -189,7 +226,7 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
 
 
         {/* Delete button */}
-        <button className="btn btn-circle text-lg bg-red-100 text-red-800">
+        <button onClick={handleDeleteData} className="btn btn-circle text-lg bg-red-100 text-red-800">
           <MdDelete />
         </button>
       </td>
