@@ -9,7 +9,7 @@ import { Link } from "react-router";
 import { BiCategory } from "react-icons/bi";
 import { IoIosSave } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
-const MyReviewCard = ({ review, onUpdated }) => {
+const MyReviewCard = ({ review, setUpdate }) => {
   const modalRef = useRef();
   const [serviceData, setServiceData] = useState(null);
   const [loadingService, setLoadingService] = useState(true);
@@ -50,7 +50,7 @@ const MyReviewCard = ({ review, onUpdated }) => {
       .then(data => {
         if (data.modifiedCount > 0) {
           Swal.fire("Updated!", "Your review has been updated.", "success");
-          onUpdated();
+          setUpdate(true);
           modalRef.current?.close();
         } else {
           Swal.fire("Oops", "No changes were made.", "info");
@@ -58,6 +58,40 @@ const MyReviewCard = ({ review, onUpdated }) => {
       })
       .catch(err => Swal.fire("Error", err.message, "error"));
   };
+
+   const handleDelete =()=>{
+         Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+  
+          fetch(`http://localhost:3000/myreviews/${review._id}`,{
+              method: 'DELETE'
+          })
+          .then(res => res.json())
+          .then( () => {
+            setUpdate(true)
+              
+          })
+  
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+  
+  
+        }
+      });
+  
+  
+      }
 
   return (
     <div className="max-w-3xl mx-auto p-6 border border-gray-200 rounded-xl shadow-xl">
@@ -121,9 +155,9 @@ const MyReviewCard = ({ review, onUpdated }) => {
             required
           />
 
-          <div className="modal-action flex justify-between">
+          <div className="modal-action flex flex-col md:flex-row justify-between">
             <div>
-                 <h1 className="badge text-lg p-4">{review.addedDate}</h1>
+                 <h1 className="badge p-4 text-slate-400">Reviewed: {review.addedDate}</h1>
             </div>
             <div className="flex gap-4">
                 <button type="submit" className="btn btn-success ">
@@ -136,7 +170,7 @@ const MyReviewCard = ({ review, onUpdated }) => {
           </div>
         </form>
       </dialog>
-        <button className="btn btn-soft btn-error">
+        <button onClick={handleDelete} className="btn btn-soft btn-error">
           <MdDeleteOutline /> Delete
         </button>
       </div>
