@@ -9,6 +9,7 @@ const MyReviewsPage = () => {
     const {userInfo} = use(AuthContext);
     const [loading,setLoading] = useState(true);
     const [myreviews,setMyReviews] = useState([]);
+    const [update,setUpdate] = useState(false);
 
     useEffect(()=>{
 
@@ -16,9 +17,10 @@ const MyReviewsPage = () => {
         .then(res => res.json())
         .then( (data)=>{
             setMyReviews(data);
+            setUpdate(false);
             setLoading(false);
         })
-    },[userInfo?.email])
+    },[userInfo?.email,update])
     return (
         <div>
             <motion.div
@@ -38,15 +40,17 @@ const MyReviewsPage = () => {
             <div className='p-2'>
                 {
                     loading? (<>
-                        <div className="w-50 mx-auto mt-20">
-              <span className="loading loading-spinner text-success w-30 bg-blue-100"></span>
-            </div>
+                        <div className='max-w-3xl mx-auto'>
+                            <div className="w-50 mx-auto mt-20">
+              <span className="loading loading-spinner text-success w-40 bg-blue-100"></span>
+                        </div>
+                        </div>
                     </>):(<>
 
                         <div className='grid grid-cols-1 gap-10 my-10'>
                             {
                                 
-                                myreviews.map(review => <MyReviewCard key={review?._id} review={review}></MyReviewCard>)
+                                myreviews.map(review => <MyReviewCard key={review?._id} review={review} setUpdate={setUpdate}></MyReviewCard>)
                             }
                         </div>
                     </>)
