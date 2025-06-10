@@ -10,12 +10,19 @@ const ServicesPage = () => {
   document.title = "Explore Service | Ratewise";
   const [loader, setLoader] = useState(true);
   const [data, setData] = useState(null);
-  const servicesData = useLoaderData();
+  const [search,setSearch] = useState("");
 
   useEffect(() => {
-    setData(servicesData);
-    setLoader(false);
-  }, [servicesData]);
+
+    fetch(`http://localhost:3000/allservices?searchParams=${search}`)
+    .then( res => res.json())
+    .then(result => {
+
+      setData(result);
+      setLoader(false);
+    })
+
+  }, [search]);
 
   return (
     <div className="p-2">
@@ -35,6 +42,29 @@ const ServicesPage = () => {
             one place.
           </p>
         </motion.div>
+      </div>
+
+      {/* Search and filter */}
+      <div className="max-w-4xl mx-auto flex justify-center my-10">
+        <label className="input">
+          <svg
+            className="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" className="grow" placeholder="Search By Title" onChange={(e)=> setSearch(e.target.value)}/>
+        </label>
       </div>
 
       {/* Services Container */}
