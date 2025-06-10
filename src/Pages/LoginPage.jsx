@@ -5,6 +5,7 @@ import lottieAnimation from "../assets/Lottie/Login.json";
 import RegistrationForm from "../Components/Forms/RegistrationForm";
 import LoginForm from "../Components/Forms/LoginForm";
 const LoginPage = () => {
+  document.title = "Login | Ratewise";
   return (
     <div className="mt-20 p-5">
       {/* title */}

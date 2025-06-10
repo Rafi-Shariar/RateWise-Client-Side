@@ -4,6 +4,8 @@ import Lottie from "lottie-react";
 import lottieAnimation from "../assets/Lottie/Registration.json";
 import RegistrationForm from "../Components/Forms/RegistrationForm";
 const RegistrationPage = () => {
+
+  document.title = "Registration | Ratewise";
   return (
     <div className="mt-20 p-5">
       {/* title */}

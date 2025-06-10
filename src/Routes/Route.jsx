@@ -9,6 +9,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AddServicesPage from "../Pages/AddServicesPage";
 import MyServicesPage from "../Pages/MyServicesPage";
 import MyReviewsPage from "../Pages/MyReviewsPage";
+import PageNotFound from "../Pages/PageNotFound";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,12 @@ const router = createBrowserRouter([
             { path:'/addservices', element:<PrivateRoute><AddServicesPage></AddServicesPage></PrivateRoute>},
             { path:'/myservices', element:<PrivateRoute><MyServicesPage></MyServicesPage></PrivateRoute>},
             { path:'/myreviews', element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>},
+            { path:'/*', element:<PageNotFound></PageNotFound>},
         ]
+    },
+    {
+        path:'*',
+        element:<PageNotFound></PageNotFound>
     }
 ])
 

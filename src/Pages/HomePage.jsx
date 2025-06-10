@@ -7,6 +7,8 @@ import RecentReviewsContainer from '../Components/RecentReviews/RecentReviewsCon
 
 const HomePage = () => {
 
+    document.title = "Ratewise";
+
 
     
     return (

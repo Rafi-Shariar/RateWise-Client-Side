@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import MySercvicesTableContainer from '../Components/MyServices/MySercvicesTableContainer';
 
 const MyServicesPage = () => {
+    document.title = "My Service | Ratewise";
     return (
         <div>
             

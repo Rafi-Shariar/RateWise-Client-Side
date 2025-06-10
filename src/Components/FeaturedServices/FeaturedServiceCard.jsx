@@ -7,7 +7,7 @@ const FeaturedServiceCard = ({ featured }) => {
   const { _id, image, title, description, price,category } = featured;
 
   return (
-    <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl"
+    <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl hover:bg-sky-50"
     whileHover={{ scale: 1.1 }}
             
             >

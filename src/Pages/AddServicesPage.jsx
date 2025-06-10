@@ -2,6 +2,9 @@ import React, { use } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import AddServicesForm from "../Components/Forms/AddServicesForm";
 const AddServicesPage = () => {
+
+  document.title = "Add Service | Ratewise";
+
   const { userInfo } = use(AuthContext);
 
   return (

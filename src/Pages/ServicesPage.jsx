@@ -7,6 +7,7 @@ import { useLoaderData } from "react-router";
 import FeaturedServiceCard from "../Components/FeaturedServices/FeaturedServiceCard";
 
 const ServicesPage = () => {
+  document.title = "Explore Service | Ratewise";
   const [loader, setLoader] = useState(true);
   const [data, setData] = useState(null);
   const servicesData = useLoaderData();

@@ -5,6 +5,7 @@ import { AuthContext } from '../Context/AuthContext';
 import MyReviewCard from '../Components/MyReviews/MyReviewCard';
 
 const MyReviewsPage = () => {
+  document.title = "My Reviews | Ratewise";
   const { userInfo } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [myReviews, setMyReviews] = useState([]);
