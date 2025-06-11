@@ -47,7 +47,7 @@ const RecentReviewsContainer = () => {
           </>
         ) : (
           <>
-            <Marquee className="my-10  p-10 rounded-2xl bg-gradient-to-t from-sky-200 via-sky-100 to-white border border-gray-200">
+            <Marquee className="my-10  p-10 rounded-2xl bg-gradient-to-t from-slate-200 via-slate-100 to-white border border-gray-200">
               {
                 reviews.map(review => <ReviewCard key={review._id} review={review}></ReviewCard>)
               }
