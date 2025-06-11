@@ -24,7 +24,7 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser)=>{
             setUser(currentUser);
             
-            fetch(`http://localhost:3000/user/${currentUser.email}`)
+            fetch(`http://localhost:3000/user/${currentUser?.email}`)
             .then(res => res.json())
             .then(data =>{
                 setUserInfo(data);

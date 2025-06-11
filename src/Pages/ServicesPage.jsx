@@ -72,16 +72,25 @@ const ServicesPage = () => {
         onChange={(e)=>setCategory(e.target.value)}
       >
         <option value="">Select a category</option>
-        <option value="Web Development">Web Development</option>
-        <option value="Graphic Design">Graphic Design</option>
-        <option value="Digital Marketing">Digital Marketing</option>
-        <option value="Content Writing">Content Writing</option>
-        <option value="Video Editing">Video Editing</option>
-        <option value="Mobile App Development">Mobile App Development</option>
-        <option value="SEO Services">SEO Services</option>
-        <option value="UI/UX Design">UI/UX Design</option>
-        <option value="Social Media Management">Social Media Management</option>
-        <option value="Consulting & Strategy">Consulting & Strategy</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Architecture & Interior">
+            Architecture & Interior
+          </option>
+          <option value="Electronics & Repair">Electronics & Repair</option>
+          <option value="Automobile Services">Automobile Services</option>
+          <option value="Retail & Stores">Retail & Stores</option>
+          <option value="Grocery & Super Shops">Grocery & Super Shops</option>
+          <option value="Graphic & Logo Design">Graphic & Logo Design</option>
+          <option value="Content & Copywriting">Content & Copywriting</option>
+          <option value="Video Production">Video Production</option>
+          <option value="Mobile App Development">Mobile App Development</option>
+          <option value="SEO & Marketing">SEO & Marketing</option>
+          <option value="UI/UX & Product Design">UI/UX & Product Design</option>
+          <option value="Social Media Services">Social Media Services</option>
+          <option value="Consulting & Strategy">Consulting & Strategy</option>
+          <option value="Home & Cleaning Services">
+            Home & Cleaning Services
+          </option>
       </select>
     </div>
 

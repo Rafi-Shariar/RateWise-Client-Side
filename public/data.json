@@ -37,7 +37,7 @@
     "companyName": "RankWise",
     "website": "https://rankwise.io",
     "description": "Boost your website’s visibility with our in-depth SEO audit and optimization services.",
-    "category": "Digital Marketing",
+    "category": "Marketing",
     "price": 300,
     "addedDate": "2025-06-01",
     "userEmail": "rafi.shariar619@gmail.com",
@@ -108,5 +108,159 @@
     "addedDate": "2025-06-04",
     "userEmail": "mashfia@gmail.com",
     "image": "https://i.ibb.co/m5PfgpsW/twitch.png"
+  },
+  {
+    "title": "Laptop Repair Service",
+    "companyName": "TechFix Point",
+    "website": "https://techfixpoint.com",
+    "description": "Reliable and quick laptop repair services for all brands with genuine parts and warranty.",
+    "category": "Electronics & Repair",
+    "price": 60,
+    "addedDate": "2025-06-04",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/TMymNNnG/check.png"
+  },
+  {
+    "title": "Car Wash & Detailing",
+    "companyName": "ShinyWheels",
+    "website": "https://shinywheels.net",
+    "description": "Professional car cleaning and detailing service at your doorstep.",
+    "category": "Automobile Services",
+    "price": 35,
+    "addedDate": "2025-06-05",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/wrLtJqCm/quality.png"
+  },
+  {
+    "title": "Interior Design Consultation",
+    "companyName": "CozySpaces",
+    "website": "https://cozyspaces.design",
+    "description": "Modern interior styling and layout planning for homes and offices.",
+    "category": "Architecture & Interior",
+    "price": 200,
+    "addedDate": "2025-06-05",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/wZx3KGGD/weather.png"
+  },
+  {
+    "title": "Custom T-Shirt Printing",
+    "companyName": "PrintItNow",
+    "website": "https://printitnow.shop",
+    "description": "Personalized apparel printing for events, brands, and gifting.",
+    "category": "Retail & Stores",
+    "price": 20,
+    "addedDate": "2025-06-05",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/7xzKcYWT/reddit.png"
+  },
+  {
+    "title": "Home Cleaning Service",
+    "companyName": "CleanWave",
+    "website": "https://cleanwave.services",
+    "description": "Deep cleaning and sanitization for apartments, homes, and offices.",
+    "category": "Home & Cleaning Services",
+    "price": 90,
+    "addedDate": "2025-06-05",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/5x9CnX7w/mortarboard-1.png"
+  },
+  {
+    "title": "Online Grocery Delivery",
+    "companyName": "FreshBasket",
+    "website": "https://freshbasket.shop",
+    "description": "Get fresh groceries and essentials delivered to your doorstep daily.",
+    "category": "Grocery & Super Shops",
+    "price": 5,
+    "addedDate": "2025-06-05",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/wrLtJqCm/quality.png"
+  },
+  {
+    "title": "Resume Building & CV Writing",
+    "companyName": "HireReady",
+    "website": "https://hireready.pro",
+    "description": "Professional resume design and writing service to boost your job chances.",
+    "category": "Education",
+    "price": 40,
+    "addedDate": "2025-06-06",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/wZx3KGGD/weather.png"
+  },
+  {
+    "title": "Basic Portfolio Website (Static)",
+    "companyName": "DevCraft",
+    "website": "https://devcraft.site",
+    "description": "Simple and clean personal portfolio websites for professionals.",
+    "category": "Web Development",
+    "price": 130,
+    "addedDate": "2025-06-06",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/y53svRj/portfolio.png"
+  },
+  {
+    "title": "Pet Grooming Service",
+    "companyName": "Pawfect Care",
+    "website": "https://pawfectcare.com",
+    "description": "Gentle and hygienic grooming service for your beloved pets.",
+    "category": "Home & Cleaning Services",
+    "price": 70,
+    "addedDate": "2025-06-06",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/qFmN6byk/check-1.png"
+  },
+  {
+    "title": "Shopify Store Setup",
+    "companyName": "ShopLaunch",
+    "website": "https://shoplaunch.io",
+    "description": "Complete Shopify store setup with theme customization and basic SEO.",
+    "category": "Retail & Stores",
+    "price": 400,
+    "addedDate": "2025-06-06",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/Gx7qfcW/shopify.png"
+  },
+  {
+    "title": "Email Marketing Campaign",
+    "companyName": "MailWave",
+    "website": "https://mailwave.marketing",
+    "description": "Setup and manage email marketing campaigns using Mailchimp or ConvertKit.",
+    "category": "Marketing",
+    "price": 150,
+    "addedDate": "2025-06-06",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/jZ8n8tL9/flaticon.png"
+  },
+  {
+    "title": "Custom E-commerce App (React + Node)",
+    "companyName": "ShopByte",
+    "website": "https://shopbyte.tech",
+    "description": "Fully custom e-commerce web app built using MERN stack with admin dashboard.",
+    "category": "Web Development",
+    "price": 1800,
+    "addedDate": "2025-06-07",
+    "userEmail": "rafi.shariar619@gmail.com",
+    "image": "https://i.ibb.co/7d3sksk3/logo-1.png"
+  },
+  {
+    "title": "Basic Poster Design",
+    "companyName": "DesignXpress",
+    "website": "https://designxpress.art",
+    "description": "Get eye-catching poster designs for events, promos, or personal use.",
+    "category": "Graphic Design",
+    "price": 35,
+    "addedDate": "2025-06-07",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/m5PfgpsW/twitch.png"
+  },
+  {
+    "title": "Business Card Printing",
+    "companyName": "CardMate",
+    "website": "https://cardmate.pro",
+    "description": "Premium quality business card design and print service with delivery.",
+    "category": "Retail & Stores",
+    "price": 25,
+    "addedDate": "2025-06-07",
+    "userEmail": "mashfia@gmail.com",
+    "image": "https://i.ibb.co/wZx3KGGD/weather.png"
   }
 ]

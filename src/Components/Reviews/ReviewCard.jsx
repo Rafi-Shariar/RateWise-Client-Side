@@ -4,9 +4,9 @@ const ReviewCard = ({ review, companyInfo }) => {
   const { userName, userImage, rating, description, addedDate } = review;
 
   return (
-    <div className="border rounded-2xl border-orange-100 overflow-hidden shadow-lg">
+    <div className="border rounded-2xl border-blue-100 overflow-hidden shadow-lg">
       {/* section 1 */}
-      <div className="flex items-center gap-2 p-3  bg-bas bg-orange-50">
+      <div className="flex items-center gap-2 p-3  bg-blue-100">
         <div className="avatar">
           <div className="w-12 rounded-full">
             <img src={userImage} />

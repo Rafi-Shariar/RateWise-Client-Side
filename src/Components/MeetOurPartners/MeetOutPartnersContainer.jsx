@@ -18,7 +18,7 @@ const MeetOutPartnersContainer = () => {
         <h1 className="text-2xl font-semibold text-blue-900 lg:text-4xl">
           Meet Our Partners
         </h1>
-        <p className="font-extralight">
+        <p className="font-extralight my-3">
           Empowering our platform with trusted technologies and industry
           leaders.
         </p>

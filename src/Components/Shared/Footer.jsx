@@ -3,30 +3,37 @@ import logo from '../../assets/logo.png'
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { Link } from 'react-router';
 const Footer = () => {
     return (
-        <div>
- <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 bg-slate-700">
-  <aside className="grid-flow-col items-center">
-    <div>
-      <img src={logo} alt="" className='w-10'/>
-    </div>
-    <p className='text-gray-700'>Copyright © {new Date().getFullYear()} - All right reserved By RateWise</p>
+        <footer className="footer sm:footer-horizontal bg-slate-800 text-white p-10">
+  <aside>
+    <img src={logo} alt="logo" className='w-20'/>
+    <Link to="/" className="text-xl text-secondary lg:text-3xl">
+              Rate<span className="font-extralight text-yellow-500">Wise</span>
+            </Link>
   </aside>
-  <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-    <a href='https://www.facebook.com/rafi.shariar.630040/' target='_blank'>
-      <FaFacebook className='text-3xl text-sky-600'/>
-    </a>
-    <a href='https://x.com/' target='_blank'>
-      <FaTwitter className='text-3xl text-sky-300'/>
-    </a>
-    <a href='https://www.linkedin.com/in/rafi-shariar-231449214/' target='_blank'>
-      <FaLinkedin className='text-3xl text-sky-800'/>
-
-    </a>
+  <nav>
+    <h6 className="footer-title">Services</h6>
+    <a className="link link-hover">Branding</a>
+    <a className="link link-hover">Design</a>
+    <a className="link link-hover">Marketing</a>
+    <a className="link link-hover">Advertisement</a>
+  </nav>
+  <nav>
+    <h6 className="footer-title">Company</h6>
+    <a className="link link-hover">About us</a>
+    <a className="link link-hover">Contact</a>
+    <a className="link link-hover">Jobs</a>
+    <a className="link link-hover">Press kit</a>
+  </nav>
+  <nav>
+    <h6 className="footer-title">Legal</h6>
+    <a className="link link-hover">Terms of use</a>
+    <a className="link link-hover">Privacy policy</a>
+    <a className="link link-hover">Cookie policy</a>
   </nav>
 </footer>
-        </div>
     );
 };
 

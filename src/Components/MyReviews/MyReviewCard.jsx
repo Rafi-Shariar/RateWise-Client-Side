@@ -94,7 +94,7 @@ const MyReviewCard = ({ review, setUpdate }) => {
       }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 border border-gray-200 rounded-xl shadow-xl">
+    <div className="md:w-2xl lg:w-3xl mx-auto p-6 border border-gray-200 rounded-xl shadow-xl">
       <div className="flex items-center gap-4 mb-4">
         <img src={serviceData.image} alt="" className="w-18 rounded-lg" />
         <div>

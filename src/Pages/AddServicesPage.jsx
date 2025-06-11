@@ -8,7 +8,11 @@ const AddServicesPage = () => {
   const { userInfo } = use(AuthContext);
 
   return (
-    <div>
+    <div 
+    className="min-h-screen bg-fixed bg-cover bg-no-repeat "
+      style={{
+        // bÍ
+      }}>
       {userInfo ? (
         <>
           {/* title */}

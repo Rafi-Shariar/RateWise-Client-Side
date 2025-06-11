@@ -31,7 +31,7 @@ const RecentReviewsContainer = () => {
         <h1 className="text-2xl font-semibold text-blue-900 lg:text-4xl mt-20">
           Recent Reviews
         </h1>
-        <p className="font-extralight">
+        <p className="font-extralight mt-3">
           See what others are saying about their experience
         </p>
       </motion.div>

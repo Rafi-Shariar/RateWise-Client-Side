@@ -28,7 +28,7 @@ const CountUpContainer = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}>
                 <h1 className='text-2xl font-semibold text-blue-900 lg:text-4xl mt-20'>Operational Summary</h1>
-            <p className='font-extralight'>Tracking service activity, user engagement, and feedback.</p>
+            <p className='font-extralight mt-3'>Tracking service activity, user engagement, and feedback.</p>
             </motion.div>
 
 

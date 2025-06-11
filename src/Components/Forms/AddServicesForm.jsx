@@ -1,50 +1,43 @@
 import React from "react";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import { toast, ToastContainer } from "react-toastify";
 
-const AddServicesForm = ({userInfo}) => {
+const AddServicesForm = ({ userInfo }) => {
+  const notify = () => toast("New Service Added!");
 
-    const notify = () => toast('New Service Added!');
+  const handleAddService = (e) => {
+    e.preventDefault();
 
-    const handleAddService = e =>{
-        e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const serviceData = Object.fromEntries(formData.entries());
 
-        const form = e.target;
-        const formData = new FormData(form);
-        const serviceData = Object.fromEntries(formData.entries());
+    const addedDate = format(new Date(), "yyyy-MM-dd");
 
-        const addedDate = format(new Date(), 'yyyy-MM-dd');
+    const newServiceData = { ...serviceData, addedDate };
+    console.log(newServiceData);
 
-        const newServiceData = {...serviceData,addedDate};
-        console.log(newServiceData);
-
-        //Adding data to DB
-        fetch('http://localhost:3000/addservices',{
-            method:'POST',
-            headers:{ 'content-type':'application/json' },
-            body: JSON.stringify(newServiceData)
-
-        }).then(res => res.json())
-        .then( ()=>{
-            //sweetalert
-            notify();
-            e.target.reset();
-
-        })
-
-        
-        
-
-
-    }
+    //Adding data to DB
+    fetch("http://localhost:3000/addservices", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(newServiceData),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        //sweetalert
+        notify();
+        e.target.reset();
+      });
+  };
   return (
     <div className="p-2 my-10">
       <form
         onSubmit={handleAddService}
         action=""
-        className=" bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl lg:w-[500px]"
+        className=" bg-linear-to-r from-blue-900 to-sky-700 p-7 rounded-2xl lg:w-[500px]"
       >
-        <legend className="fieldset-legend">Company Logo</legend>
+        <legend className="fieldset-legend text-white">Company Logo</legend>
         <input
           type="text"
           className="input w-full"
@@ -53,7 +46,7 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Service title</legend>
+        <legend className="fieldset-legend text-white">Service title</legend>
         <input
           type="text"
           className="input w-full"
@@ -62,7 +55,7 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Company Name</legend>
+        <legend className="fieldset-legend text-white">Company Name</legend>
         <input
           type="text"
           className="input w-full"
@@ -71,7 +64,7 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Website</legend>
+        <legend className="fieldset-legend text-white">Website</legend>
         <input
           type="text"
           className="input w-full"
@@ -80,7 +73,7 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Description</legend>
+        <legend className="fieldset-legend text-white">Description</legend>
         <textarea
           type="text"
           className="textarea w-full"
@@ -89,24 +82,31 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Category</legend>
+        <legend className="fieldset-legend text-white">Category</legend>
         <select name="category" required className="input w-full">
           <option value="">Select a category</option>
           <option value="Web Development">Web Development</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Digital Marketing">Digital Marketing</option>
-          <option value="Content Writing">Content Writing</option>
-          <option value="Video Editing">Video Editing</option>
-          <option value="Mobile App Development">Mobile App Development</option>
-          <option value="SEO Services">SEO Services</option>
-          <option value="UI/UX Design">UI/UX Design</option>
-          <option value="Social Media Management">
-            Social Media Management
+          <option value="Architecture & Interior">
+            Architecture & Interior
           </option>
+          <option value="Electronics & Repair">Electronics & Repair</option>
+          <option value="Automobile Services">Automobile Services</option>
+          <option value="Retail & Stores">Retail & Stores</option>
+          <option value="Grocery & Super Shops">Grocery & Super Shops</option>
+          <option value="Graphic & Logo Design">Graphic & Logo Design</option>
+          <option value="Content & Copywriting">Content & Copywriting</option>
+          <option value="Video Production">Video Production</option>
+          <option value="Mobile App Development">Mobile App Development</option>
+          <option value="SEO & Marketing">SEO & Marketing</option>
+          <option value="UI/UX & Product Design">UI/UX & Product Design</option>
+          <option value="Social Media Services">Social Media Services</option>
           <option value="Consulting & Strategy">Consulting & Strategy</option>
+          <option value="Home & Cleaning Services">
+            Home & Cleaning Services
+          </option>
         </select>
 
-        <legend className="fieldset-legend">Price</legend>
+        <legend className="fieldset-legend text-white">Price</legend>
         <input
           type="number"
           className="input w-full"
@@ -115,7 +115,7 @@ const AddServicesForm = ({userInfo}) => {
           required
         />
 
-        <legend className="fieldset-legend">Added By</legend>
+        <legend className="fieldset-legend text-white">Added By</legend>
         <input
           type="text"
           className="input w-full text-slate-400"
@@ -124,16 +124,14 @@ const AddServicesForm = ({userInfo}) => {
           readOnly
         />
 
-
-
         <button
           type="submit"
-          className="btn bg-purple-500 text-white w-full mt-4 hover:bg-white hover:text-purple-700"
+          className="btn bg-yellow-500 text-white w-full mt-4 hover:bg-white hover:text-yellow-700"
         >
           Add Service
         </button>
       </form>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

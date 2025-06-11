@@ -61,17 +61,19 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
 
   return (
     <div
-      className="bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-400 to-90%
+      className="bg-linear-to-r from-blue-900 to-blue-500
  p-5 rounded-2xl shadow-2xl lg:mt-20"
     >
-      <h1 className="text-xl flex items-center gap-2">
+      <h1 className="text-2xl flex items-center gap-2 text-white">
         <FaPenAlt />
         Give A Review
       </h1>
 
+<div className="divider before:bg-slate-100 after:bg-slate-100"></div>
+
       <div>
         <form action="" className="p-2" onSubmit={handleAddReview}>
-          <legend className="fieldset-legend">Experience</legend>
+          <legend className="fieldset-legend text-white">Experience</legend>
           <textarea
             type="text"
             className="textarea h-[150px] w-full"
@@ -80,7 +82,7 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
             required
           />
 
-          <legend className="fieldset-legend">Rate your experience</legend>
+          <legend className="fieldset-legend text-white">Rate your experience</legend>
           <Rating
             style={{ maxWidth: 150 }}
             value={ratings}
@@ -91,7 +93,7 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="btn mt-5 bg-blue-700 text-white hover:bg-blue-400"
+              className="btn mt-5 bg-yellow-400 text-white hover:bg-yellow-600"
             >
               Add Review
             </button>
