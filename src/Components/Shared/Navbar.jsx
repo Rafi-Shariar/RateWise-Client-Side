@@ -44,7 +44,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="navbar bg-base-100 shadow-lg sticky top-0 z-40">
+    <div className="navbar bg-slate-700 text-white shadow-lg sticky top-0 z-40">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -74,14 +74,14 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center gap-2">
-            <img src={logo} alt="" className="w-7" />
-            <Link to="/" className="text-xl text-primary lg:text-2xl">
-              RateWise
+            <img src={logo} alt="" className="w-7 lg:w-10" />
+            <Link to="/" className="text-xl text-secondary lg:text-3xl">
+              Rate<span className="font-extralight text-yellow-500">Wise</span>
             </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-5">
+          <ul className="menu menu-horizontal px-1 gap-5 text-base">
             {/* desktop */}
             {user ? loggedInLinks : links}
           </ul>

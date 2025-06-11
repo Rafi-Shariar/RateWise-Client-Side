@@ -6,7 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
     return (
         <div>
- <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 bg-primary">
+ <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 bg-slate-700">
   <aside className="grid-flow-col items-center">
     <div>
       <img src={logo} alt="" className='w-10'/>

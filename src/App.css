@@ -12,4 +12,5 @@
 .active{
 
   text-decoration: underline;
+  color: oklch(79.5% 0.184 86.047);
 }
