@@ -4,19 +4,22 @@ import { MdDelete } from "react-icons/md";
 import { AuthContext } from "../../Context/AuthContext";
 import MyServicesRow from "./MyServicesRow";
 import NoServiceCard from "./NoServiceCard";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const MySercvicesTableContainer = () => {
   const { userInfo } = use(AuthContext);
   const [loading, setLoading] = useState(true);
   const [myservices, setMyservices] = useState([]);
   const [dataUpdated,setDataUpdated] = useState(false);
 
+  const axiosSecure = useAxiosSecure();
+  
+
   useEffect(() => {
     if (userInfo?.email) {
       setLoading(true);
-      fetch(`http://localhost:3000/myservices/${userInfo.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setMyservices(data);
+      axiosSecure.get(`/myservices/${userInfo.email}`)
+        .then((res) => {
+          setMyservices(res.data);
           setLoading(false);
           setDataUpdated(false);
         })

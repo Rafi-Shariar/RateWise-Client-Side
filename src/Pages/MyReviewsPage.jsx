@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { AuthContext } from '../Context/AuthContext';
 import MyReviewCard from '../Components/MyReviews/MyReviewCard';
+import useAxiosSecure from '../Hooks/useAxiosSecure';
 
 const MyReviewsPage = () => {
   document.title = "My Reviews | Ratewise";
@@ -11,14 +12,15 @@ const MyReviewsPage = () => {
   const [myReviews, setMyReviews] = useState([]);
   const [update, setUpdate] = useState(false);
 
+  const axiosSecure = useAxiosSecure();
+
   useEffect(() => {
     if (!userInfo?.email) return;
 
     setLoading(true);
-    fetch(`http://localhost:3000/myreviews/${userInfo.email}`)
-      .then(res => res.json())
-      .then(data => {
-        setMyReviews(data);
+    axiosSecure.get(`/myreviews/${userInfo.email}`)
+      .then(res => {
+        setMyReviews(res.data);
         setLoading(false);
         setUpdate(false);
       })
