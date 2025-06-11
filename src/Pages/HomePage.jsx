@@ -4,6 +4,7 @@ import FeaturedServicesContainer from '../Components/FeaturedServices/FeaturedSe
 import MeetOutPartnersContainer from '../Components/MeetOurPartners/MeetOutPartnersContainer';
 import CountUpContainer from '../Components/CountUps/CountUpContainer';
 import RecentReviewsContainer from '../Components/RecentReviews/RecentReviewsContainer';
+import NewServiceContainer from '../Components/ExtraSection/NewServiceContainer';
 
 const HomePage = () => {
 
@@ -18,6 +19,7 @@ const HomePage = () => {
             <MeetOutPartnersContainer></MeetOutPartnersContainer>
             <CountUpContainer></CountUpContainer>
             <RecentReviewsContainer></RecentReviewsContainer>
+            <NewServiceContainer></NewServiceContainer>
         </div>
     );
 };

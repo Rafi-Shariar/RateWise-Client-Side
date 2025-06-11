@@ -3,8 +3,9 @@ import { MdArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { BiSolidCategory } from "react-icons/bi";
+import { PiBuildingOfficeFill } from "react-icons/pi";
 const FeaturedServiceCard = ({ featured }) => {
-  const { _id, image, title, description, price,category } = featured;
+  const { _id, image, title, description, price,category,companyName } = featured;
 
   return (
     <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl hover:bg-sky-50"
@@ -13,9 +14,12 @@ const FeaturedServiceCard = ({ featured }) => {
             >
       <div className="flex gap-5 items-center">
         <figure className="">
-          <img src={image} alt={title} className=" w-7 h-8" />
+          <img src={image} alt={title} className=" w-10" />
         </figure>
-        <h2 className=" text-xl">{title}</h2>
+        <div>
+          <h2 className=" text-xl">{title}</h2>
+          <h2 className=" text-base text-gray-500 flex items-center gap-2"><PiBuildingOfficeFill/>{companyName}</h2>
+        </div>
       </div>
 
       <div className="">
@@ -23,11 +27,7 @@ const FeaturedServiceCard = ({ featured }) => {
           {description.slice(0, 100)}...
         </p>
 
-        <div className="border-b border-slate-300">
-          <span className="badge my-5 text-primary"> <BiSolidCategory />{category}</span>
-          
-        </div>
-
+      
       </div>
 
       <div className="flex justify-between items-center mt-5">
