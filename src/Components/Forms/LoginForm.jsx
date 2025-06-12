@@ -24,9 +24,7 @@ const LoginForm = () => {
           timer: 1200,
         });
 
-        setTimeout(() => {
-          navigate(location.state ? location.state : "/");
-        }, 3000);
+        navigate(location.state ? location.state : "/");
       })
       .catch(() => {
         Swal.fire({
@@ -70,9 +68,7 @@ const LoginForm = () => {
             }
           });
 
-        setTimeout(() => {
-          navigate(location.state ? location.state : "/");
-        }, 3000);
+        navigate(location.state ? location.state : "/");
       })
       .catch(() => {
         Swal.fire({

@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
       return response;
     },
     (err) => {
-      if (err.status === 401 || err.status === 403) {
+      if (err.response?.status === 401 || err.response?.status === 403) {
         console.log('axios', err.status);
         
         logOutUser()

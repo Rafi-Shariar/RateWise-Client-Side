@@ -24,7 +24,6 @@ This project focuses on **user-generated content**, **community engagement**, an
 - **Tailwind CSS** `v4.1.8` – Utility-first CSS framework
 - **DaisyUI** – Tailwind CSS component library
 - **Framer Motion** – Smooth UI animations
-- **Chakra UI** & **Material Tailwind** – Enhanced design flexibility
 - **React Router** `v7.6.1` – Navigation & routing
 - **React Icons**, **Lottie**, **CountUp**, **Fast Marquee** – Interactive UI elements
 

@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unSubscribe();
     };
-  }, [user]);
+  }, []);
 
   //Logout
   const logOutUser = () => {
