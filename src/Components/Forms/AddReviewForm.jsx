@@ -98,8 +98,8 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
               Add Review
             </button>
           </div>
-          <p className="text-xs text-center mt-2 text-orange-600">
-            Login first, to add reviews.
+          <p className="text-xs text-center mt-2 text-white">
+            Login first to add reviews.
           </p>
         </form>
       </div>

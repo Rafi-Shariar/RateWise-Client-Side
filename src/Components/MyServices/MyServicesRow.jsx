@@ -1,14 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaPenToSquare } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 
 const MyServicesRow = ({ myservice ,setDataUpdated}) => {
   const modalRef = useRef();
+  const [totalReviews,setTotalReviews] = useState(0);
 
   const { _id,website, image, title, companyName, category, price, addedDate, description,userEmail } =
     myservice;
+
+    useEffect(()=>{
+      fetch(`https://ratewise-seven.vercel.app/reviews/${_id}`)
+      .then(res => res.json())
+      .then(data =>{
+        setTotalReviews(data.length);
+        
+      })
+    },[myservice])
+    
 
     // Updating Data
     const handleUpdatedData = e =>{
@@ -47,9 +59,6 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
      modalRef.current?.close();
      
      
-     
-    
-    
     }
 
     //Deleting Data
@@ -92,6 +101,7 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
   return (
     <tr>
       <td>
+        <Link to={`/services/${_id}`}>
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
@@ -103,9 +113,12 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
             <div className="text-sm opacity-50">{companyName}</div>
           </div>
         </div>
+        
+        </Link>
       </td>
       <td>{category}</td>
       <td>{price}$</td>
+      <td>{totalReviews}</td>
       <td>{addedDate}</td>
 
       <td className="flex">

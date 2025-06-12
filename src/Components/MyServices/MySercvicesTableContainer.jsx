@@ -50,6 +50,7 @@ const MySercvicesTableContainer = () => {
                       <th>Service Name</th>
                       <th>Category</th>
                       <th>Price</th>
+                      <th>Reviews</th>
                       <th>Added At</th>
 
                       <th>Actions</th>
