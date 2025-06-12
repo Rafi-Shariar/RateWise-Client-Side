@@ -20,7 +20,7 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
      console.log(userEmail);
      const updatedData = {...UpdatedServiceData,addedDate,userEmail};
 
-     fetch(`http://localhost:3000/update/${_id}`,{
+     fetch(`https://ratewise-seven.vercel.app/update/${_id}`,{
       method:'PUT',
       headers:{'content-type' : 'application/json'},
       body: JSON.stringify(updatedData)
@@ -65,7 +65,7 @@ const MyServicesRow = ({ myservice ,setDataUpdated}) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:3000/myservices/${_id}`,{
+        fetch(`https://ratewise-seven.vercel.app/myservices/${_id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

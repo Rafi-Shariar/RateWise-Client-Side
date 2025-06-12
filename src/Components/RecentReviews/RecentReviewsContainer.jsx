@@ -7,7 +7,7 @@ const RecentReviewsContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/allreviews")
+    fetch("https://ratewise-seven.vercel.app/allreviews")
       .then((res) => res.json())
       .then((data) => {
         const filteredData = [];

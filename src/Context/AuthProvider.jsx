@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
 
       if (currentUser?.email) {
-        fetch(`http://localhost:3000/user/${currentUser.email}`)
+        fetch(`https://ratewise-seven.vercel.app/user/${currentUser.email}`)
           .then((res) => res.json())
           .then((data) => {
             setUserInfo(data);

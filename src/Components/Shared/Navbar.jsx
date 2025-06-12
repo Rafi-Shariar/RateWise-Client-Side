@@ -10,7 +10,7 @@ const Navbar = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/user/${user?.email}`)
+    fetch(`https://ratewise-seven.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setCurrentUser(data);

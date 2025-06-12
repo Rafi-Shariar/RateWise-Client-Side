@@ -16,13 +16,13 @@ const router = createBrowserRouter([
         element:<RootLayout></RootLayout>,
         children:[
             { index:true, element:<HomePage></HomePage>,
-                loader: ()=> fetch('http://localhost:3000/services')
+                loader: ()=> fetch('https://ratewise-seven.vercel.app/services')
             },
             { path:'/services', element:<ServicesPage></ServicesPage>
                 
             },
             { path:'/services/:id', element:<ServiceDetailsPage></ServiceDetailsPage>,
-                loader:({params})=> fetch(`http://localhost:3000/services/${params.id}`)
+                loader:({params})=> fetch(`https://ratewise-seven.vercel.app/services/${params.id}`)
             },
             { path:'/registration', element:<RegistrationPage></RegistrationPage>},
             { path:'/login', element:<LoginPage></LoginPage>},

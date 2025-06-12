@@ -8,7 +8,7 @@ const ReviewCard = ({review}) => {
 
       useEffect(()=>{
 
-        fetch(`http://localhost:3000/services/${serviceID}`)
+        fetch(`https://ratewise-seven.vercel.app/services/${serviceID}`)
         .then(res => res.json())
         .then( data => {
             setServiceData(data);

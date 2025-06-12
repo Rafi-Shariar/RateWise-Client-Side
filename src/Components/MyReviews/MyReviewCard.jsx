@@ -17,7 +17,7 @@ const MyReviewCard = ({ review, setUpdate }) => {
   const [description, setDescription] = useState(review.description);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/services/${review.serviceID}`)
+    fetch(`https://ratewise-seven.vercel.app/services/${review.serviceID}`)
       .then(res => res.json())
       .then(data => {
         setServiceData(data)
@@ -41,7 +41,7 @@ const MyReviewCard = ({ review, setUpdate }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/myreviews/${review._id}`, {
+    fetch(`https://ratewise-seven.vercel.app/myreviews/${review._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ rating: newRating, description })
@@ -71,7 +71,7 @@ const MyReviewCard = ({ review, setUpdate }) => {
       }).then((result) => {
         if (result.isConfirmed) {
   
-          fetch(`http://localhost:3000/myreviews/${review._id}`,{
+          fetch(`https://ratewise-seven.vercel.app/myreviews/${review._id}`,{
               method: 'DELETE'
           })
           .then(res => res.json())

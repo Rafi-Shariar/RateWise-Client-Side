@@ -23,7 +23,7 @@ const ServiceDetailsPage = () => {
     useEffect(()=>{
         setServiceData(data);
 
-        fetch(`http://localhost:3000/reviews/${data?._id}`)
+        fetch(`https://ratewise-seven.vercel.app/reviews/${data?._id}`)
         .then(res => res.json())
         .then(reviewData => {
             setReviews(reviewData);

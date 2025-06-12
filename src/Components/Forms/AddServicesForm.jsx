@@ -18,7 +18,7 @@ const AddServicesForm = ({ userInfo }) => {
     console.log(newServiceData);
 
     //Adding data to DB
-    fetch("http://localhost:3000/addservices", {
+    fetch("https://ratewise-seven.vercel.app/addservices", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newServiceData),

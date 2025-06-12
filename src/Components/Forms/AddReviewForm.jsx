@@ -40,7 +40,7 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
       addedDate,
     };
 
-    fetch("http://localhost:3000/addreview", {
+    fetch("https://ratewise-seven.vercel.app/addreview", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newReview),

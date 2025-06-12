@@ -50,11 +50,11 @@ const LoginForm = () => {
         };
 
         // check if user Exits
-        fetch(`http://localhost:3000/userlist/${loggedUser.email}`)
+        fetch(`https://ratewise-seven.vercel.app/userlist/${loggedUser.email}`)
           .then((res) => res.json())
           .then((data) => {
             if (!data || Object.keys(data).length == 0) {
-              fetch("http://localhost:3000/users", {
+              fetch("https://ratewise-seven.vercel.app/users", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(newUser),

@@ -1,12 +1,58 @@
-# React + Vite
+# RateWise - Service Review Platform 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link 👉 [RateWise - Live Demo](https://a11-ratewise.web.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 Overview
 
-## Expanding the ESLint configuration
+**RateWise** is a full-featured **service review platform** where users can:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📜 Browse a list of services
+- ⭐ Read real reviews from other users
+- ✍️ Share their own experiences
+- ➕ Add new services and review them instantly
+
+This project focuses on **user-generated content**, **community engagement**, and **clean UI/UX** — making it both functional and aesthetically pleasing.
+
+---
+
+## 🔧 Technologies Used
+
+### Frontend
+- **React** `v19.1.0` – Component-based UI framework
+- **Tailwind CSS** `v4.1.8` – Utility-first CSS framework
+- **DaisyUI** – Tailwind CSS component library
+- **Framer Motion** – Smooth UI animations
+- **Chakra UI** & **Material Tailwind** – Enhanced design flexibility
+- **React Router** `v7.6.1` – Navigation & routing
+- **React Icons**, **Lottie**, **CountUp**, **Fast Marquee** – Interactive UI elements
+
+### Backend & Auth
+- **Firebase** – Authentication, Firestore Database, and Hosting
+
+### Utilities
+- **Axios** – HTTP requests
+- **Date-fns** – Date formatting
+- **React Toastify** & **SweetAlert2** – Notifications and alerts
+- **React Slick** – Carousel support
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Authentication System** (Firebase Auth)
+  - Login, Register, and Secure Route Protection
+- 🧾 **Service Listing**
+  - View existing services with details and ratings
+- 💬 **Review System**
+  - See what others say
+  - Post your own experience
+- ➕ **Add New Service**
+  - Users can submit and instantly view their own services
+- 📱 **Responsive Design**
+  - Mobile-friendly and optimized for all screen sizes
+- 🎨 **Modern UI**
+  - Styled with Tailwind CSS + DaisyUI for a clean look
+
+---

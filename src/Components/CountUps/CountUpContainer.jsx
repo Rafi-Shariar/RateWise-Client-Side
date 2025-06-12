@@ -9,7 +9,7 @@ const CountUpContainer = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/counts")
+    fetch("https://ratewise-seven.vercel.app/counts")
       .then((res) => res.json())
       .then((counts) => {
         setData(counts);

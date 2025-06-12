@@ -27,7 +27,7 @@ const ServicesPage = () => {
       category: category,
     });
 
-    fetch(`http://localhost:3000/allservices?${queryParams}`)
+    fetch(`https://ratewise-seven.vercel.app/allservices?${queryParams}`)
     .then( res => res.json())
     .then(result => {
 
