@@ -9,10 +9,7 @@ const AddServicesPage = () => {
 
   return (
     <div 
-    className="min-h-screen bg-fixed bg-cover bg-no-repeat "
-      style={{
-        // bÍ
-      }}>
+    >
       {userInfo ? (
         <>
           {/* title */}

@@ -10,7 +10,6 @@ import AddServicesPage from "../Pages/AddServicesPage";
 import MyServicesPage from "../Pages/MyServicesPage";
 import MyReviewsPage from "../Pages/MyReviewsPage";
 import PageNotFound from "../Pages/PageNotFound";
-
 const router = createBrowserRouter([
     {
         path:'/',
@@ -31,12 +30,13 @@ const router = createBrowserRouter([
             { path:'/myservices', element:<PrivateRoute><MyServicesPage></MyServicesPage></PrivateRoute>},
             { path:'/myreviews', element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>},
             { path:'/*', element:<PageNotFound></PageNotFound>},
+            
         ]
     },
     {
         path:'*',
         element:<PageNotFound></PageNotFound>
-    }
+    },
 ])
 
 export default router;

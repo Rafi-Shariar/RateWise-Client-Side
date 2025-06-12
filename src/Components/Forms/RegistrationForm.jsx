@@ -1,11 +1,13 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 const RegistrationForm = () => {
 
   const {createUser,setUser} = use(AuthContext);
+  const navigate = useNavigate();
 
 
     const handleRegistration = e =>{
@@ -38,11 +40,12 @@ const RegistrationForm = () => {
               draggable: true,
             });
 
+            const currentUser = userCredential.user;
+            setUser(currentUser);
+
+            navigate('/');
+
           })
-
-          const currentUser = userCredential.user;
-          setUser(currentUser);
-
 
 
         })
@@ -60,7 +63,10 @@ const RegistrationForm = () => {
 
     }
   return (
-    <div>
+    <motion.div
+     initial={{ y: 150, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 50, damping: 15 }}>
       <form action="" className="lg:w-2/3 bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl" 
       onSubmit={handleRegistration}>
         <legend className="fieldset-legend">Name</legend>
@@ -108,7 +114,7 @@ const RegistrationForm = () => {
          <Link to={'/login'}>Already have an account? <span className="font-semibold underline">Login</span></Link>
         <button type="submit" className="btn bg-purple-500 text-white w-full mt-4 hover:bg-white hover:text-purple-700">Register Now</button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
