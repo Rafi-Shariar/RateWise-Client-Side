@@ -62,7 +62,7 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
   return (
     <div
       className="bg-linear-to-r from-blue-900 to-blue-500
- p-5 rounded-2xl shadow-2xl lg:mt-20"
+ p-5 rounded-2xl shadow-2xl lg:mt-24"
     >
       <h1 className="text-2xl flex items-center gap-2 text-white">
         <FaPenAlt />

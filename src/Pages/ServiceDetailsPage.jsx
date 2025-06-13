@@ -8,6 +8,8 @@ import { BiCategory } from "react-icons/bi";
 import { RiMoneyDollarBoxFill } from "react-icons/ri";
 import AddReviewForm from '../Components/Forms/AddReviewForm';
 import ReviewContainer from '../Components/Reviews/ReviewContainer';
+import { CalculateAvgRatting } from '../utilities/CalculateAvgRatting';
+import { Rating } from "@smastrom/react-rating";
 const ServiceDetailsPage = () => {
 
     const [serviceData,setServiceData] = useState(null);
@@ -16,6 +18,7 @@ const ServiceDetailsPage = () => {
     const [reviews,setReviews] = useState([]);
     const [companyInfo,setCompanyInfo] = useState(null);
     const [currentserviceID, setCurrentServiceID] = useState(null);
+    const [avgRatting, setAvgRatting] = useState(0);
 
     const addNewReviews = {reviews,setReviews};
     
@@ -27,6 +30,10 @@ const ServiceDetailsPage = () => {
         .then(res => res.json())
         .then(reviewData => {
             setReviews(reviewData);
+            const res = CalculateAvgRatting(reviewData);
+            setAvgRatting(res);
+            
+            
             const infos = {
                 companyName : data?.companyName,
                 companyImage : data?.image
@@ -37,6 +44,7 @@ const ServiceDetailsPage = () => {
 
         setLoader(false);
     },[data])
+
 
     
 
@@ -100,7 +108,11 @@ const ServiceDetailsPage = () => {
                     <div className='flex flex-col-reverse lg:flex-row gap-10 mb-20'>
                         {/* User Review Section */}
                         <section className=' lg:w-2/3'>
-                        <h1 className='text-3xl mb-10 text-blue-900'>Reviews ({reviews?.length})</h1>
+                        <div className='text-3xl mt-10 mb-5 text-blue-900 flex items-center gap-3'>
+                            <h1>Reviews</h1>
+                            <h1>({reviews?.length})</h1>
+                            <div><Rating style={{ maxWidth: 130 }} value={avgRatting} readOnly/></div>
+                        </div>
                             {
                                 reviews? 
                                 (<>
