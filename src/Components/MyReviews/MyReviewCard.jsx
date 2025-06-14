@@ -9,12 +9,15 @@ import { Link } from "react-router";
 import { BiCategory } from "react-icons/bi";
 import { IoIosSave } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { rating } from "@material-tailwind/react";
 const MyReviewCard = ({ review, setUpdate }) => {
   const modalRef = useRef();
   const [serviceData, setServiceData] = useState(null);
   const [loadingService, setLoadingService] = useState(true);
   const [newRating, setNewRating] = useState(review.rating);
   const [description, setDescription] = useState(review.description);
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     fetch(`https://ratewise-seven.vercel.app/services/${review.serviceID}`)
@@ -41,14 +44,14 @@ const MyReviewCard = ({ review, setUpdate }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    fetch(`https://ratewise-seven.vercel.app/myreviews/${review._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ rating: newRating, description })
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.modifiedCount > 0) {
+    const updatedReview = {
+      rating : newRating,
+      description
+    }
+
+    axiosSecure.put(`/myreviews/${review._id}`, updatedReview)
+      .then(result => {
+        if (result.data.modifiedCount > 0) {
           Swal.fire("Updated!", "Your review has been updated.", "success");
           setUpdate(true);
           modalRef.current?.close();
@@ -71,20 +74,34 @@ const MyReviewCard = ({ review, setUpdate }) => {
       }).then((result) => {
         if (result.isConfirmed) {
   
-          fetch(`https://ratewise-seven.vercel.app/myreviews/${review._id}`,{
-              method: 'DELETE'
-          })
-          .then(res => res.json())
-          .then( () => {
-            setUpdate(true)
+          axiosSecure.delete(`/myreviews/${review._id}`)
+          .then( (result) => {
+
+            if (result.data.deletedCount > 0) {
+                          Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success",
+                          });
+                          setUpdate(true);
+                        } else {
+                          Swal.fire({
+                            icon: "error",
+                            title: "Unauthorized, Can't DELETE!",
+                            text: "Please login again.",
+                          });
+                        }
               
           })
+          .catch(()=>{
+            Swal.fire({
+                          icon: "error",
+                          title: "Unauthorized, Can't DELETE!",
+                          text: "Please login again.",
+                        });
+          })
   
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success",
-          });
+          
   
   
         }

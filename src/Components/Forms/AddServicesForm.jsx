@@ -1,9 +1,10 @@
 import React from "react";
 import { format } from "date-fns";
 import { toast, ToastContainer } from "react-toastify";
-
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const AddServicesForm = ({ userInfo }) => {
   const notify = () => toast("New Service Added!");
+  const axiosSecure = useAxiosSecure()
 
   const handleAddService = (e) => {
     e.preventDefault();
@@ -15,15 +16,9 @@ const AddServicesForm = ({ userInfo }) => {
     const addedDate = format(new Date(), "yyyy-MM-dd");
 
     const newServiceData = { ...serviceData, addedDate };
-    console.log(newServiceData);
 
     //Adding data to DB
-    fetch("https://ratewise-seven.vercel.app/addservices", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newServiceData),
-    })
-      .then((res) => res.json())
+    axiosSecure.post("/addservices", newServiceData)
       .then(() => {
         //sweetalert
         notify();

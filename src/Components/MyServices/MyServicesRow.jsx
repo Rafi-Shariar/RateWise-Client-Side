@@ -44,7 +44,7 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
     axiosSecure
       .put(`/update/${_id}`, updatedData)
       .then((result) => {
-        if (result.data.modifiedCount) {
+        if (result.data.modifiedCount > 0) {
           Swal.fire({
             title: "Update Done !",
             icon: "success",
