@@ -3,10 +3,12 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyServicesRow = ({ myservice, setDataUpdated }) => {
   const modalRef = useRef();
   const [totalReviews, setTotalReviews] = useState(0);
+  const axiosSecure = useAxiosSecure();
 
   const {
     _id,
@@ -39,14 +41,10 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
     console.log(userEmail);
     const updatedData = { ...UpdatedServiceData, addedDate, userEmail };
 
-    fetch(`https://ratewise-seven.vercel.app/update/${_id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updatedData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount) {
+    axiosSecure
+      .put(`/update/${_id}`, updatedData)
+      .then((result) => {
+        if (result.data.modifiedCount) {
           Swal.fire({
             title: "Update Done !",
             icon: "success",
@@ -60,6 +58,13 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
             text: "Nothing To Updated!",
           });
         }
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Unauthorized, Can't Update!",
+          text: "Please login again.",
+        });
       });
 
     modalRef.current?.close();
@@ -77,27 +82,39 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://ratewise-seven.vercel.app/myservices/${_id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then(() => {
-            setDataUpdated(true);
+        axiosSecure
+          .delete(`/myservices/${_id}`)
+          .then((result) => {
+            if (result.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              setDataUpdated(true);
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Unauthorized, Can't DELETE!",
+                text: "Please login again.",
+              });
+            }
+          })
+          .catch(() => {
+            Swal.fire({
+              icon: "error",
+              title: "Unauthorized, Can't DELETE!",
+              text: "Please login again.",
+            });
           });
-
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
       }
     });
   };
 
   //Handle UpdateButton
-  const handleUpdateButton =()=>{
-    document.getElementById(`my_modal_${_id}`).showModal()
-  }
+  const handleUpdateButton = () => {
+    document.getElementById(`my_modal_${_id}`).showModal();
+  };
 
   return (
     <tr>
@@ -131,7 +148,12 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
           <FaPenToSquare />
         </button>
         {/* //modal form */}
-        <dialog key={_id} id={`my_modal_${_id}`} className="modal" ref={modalRef}>
+        <dialog
+          key={_id}
+          id={`my_modal_${_id}`}
+          className="modal"
+          ref={modalRef}
+        >
           <div className="modal-box">
             <h3 className="font-bold text-lg my-6">
               Update Service Information
@@ -195,25 +217,43 @@ const MyServicesRow = ({ myservice, setDataUpdated }) => {
                   className="input w-full"
                 >
                   <option value="">Select a category</option>
-          <option value="Web Development">Web Development</option>
-          <option value="Architecture & Interior">
-            Architecture & Interior
-          </option>
-          <option value="Electronics & Repair">Electronics & Repair</option>
-          <option value="Automobile Services">Automobile Services</option>
-          <option value="Retail & Stores">Retail & Stores</option>
-          <option value="Grocery & Super Shops">Grocery & Super Shops</option>
-          <option value="Graphic & Logo Design">Graphic & Logo Design</option>
-          <option value="Content & Copywriting">Content & Copywriting</option>
-          <option value="Video Production">Video Production</option>
-          <option value="Mobile App Development">Mobile App Development</option>
-          <option value="SEO & Marketing">SEO & Marketing</option>
-          <option value="UI/UX & Product Design">UI/UX & Product Design</option>
-          <option value="Social Media Services">Social Media Services</option>
-          <option value="Consulting & Strategy">Consulting & Strategy</option>
-          <option value="Home & Cleaning Services">
-            Home & Cleaning Services
-          </option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Architecture & Interior">
+                    Architecture & Interior
+                  </option>
+                  <option value="Electronics & Repair">
+                    Electronics & Repair
+                  </option>
+                  <option value="Automobile Services">
+                    Automobile Services
+                  </option>
+                  <option value="Retail & Stores">Retail & Stores</option>
+                  <option value="Grocery & Super Shops">
+                    Grocery & Super Shops
+                  </option>
+                  <option value="Graphic & Logo Design">
+                    Graphic & Logo Design
+                  </option>
+                  <option value="Content & Copywriting">
+                    Content & Copywriting
+                  </option>
+                  <option value="Video Production">Video Production</option>
+                  <option value="Mobile App Development">
+                    Mobile App Development
+                  </option>
+                  <option value="SEO & Marketing">SEO & Marketing</option>
+                  <option value="UI/UX & Product Design">
+                    UI/UX & Product Design
+                  </option>
+                  <option value="Social Media Services">
+                    Social Media Services
+                  </option>
+                  <option value="Consulting & Strategy">
+                    Consulting & Strategy
+                  </option>
+                  <option value="Home & Cleaning Services">
+                    Home & Cleaning Services
+                  </option>
                 </select>
 
                 <legend className="fieldset-legend">Price</legend>
