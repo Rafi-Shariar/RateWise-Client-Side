@@ -104,6 +104,7 @@ const AddServicesForm = ({ userInfo }) => {
           <option value="Home & Cleaning Services">
             Home & Cleaning Services
           </option>
+          
         </select>
 
         <legend className="fieldset-legend text-white">Price</legend>
