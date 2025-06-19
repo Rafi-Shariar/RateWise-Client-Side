@@ -6,11 +6,13 @@ import { AuthContext } from "../../Context/AuthContext";
 import { useLocation, useNavigate } from "react-router";
 import { format } from "date-fns";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
   const [ratings, setRatings] = useState(0);
   const { user, userInfo } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
 
   const {reviews, setReviews} = addNewReviews;
 
@@ -40,12 +42,7 @@ const AddReviewForm = ({ currentserviceID ,addNewReviews}) => {
       addedDate,
     };
 
-    fetch("https://ratewise-seven.vercel.app/addreview", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newReview),
-    })
-      .then((res) => res.json())
+    axiosSecure.post("/addreview", newReview)
       .then(() => {
 
         const updatedReviewsList = [...reviews,newReview];
