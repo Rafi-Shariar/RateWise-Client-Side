@@ -1,8 +1,4 @@
-Sure, Rafi! Here's the **complete `README.md` content** ready for you to copy and paste directly into your project:
 
----
-
-````markdown
 # RateWise - Service Review Platform 🚀
 
 **Live Demo:** 👉 [RateWise - Live Site](https://a11-ratewise.web.app/)
@@ -111,14 +107,3 @@ Follow these steps to get the project running on your local machine:
 * 🔴 **Live Site:** [RateWise](https://a11-ratewise.web.app/)
 * 🟣 **GitHub Repository:** [github.com/Rafi-Shariar/ratewise](https://github.com/Rafi-Shariar/ratewise)
 
----
-
-> Made with ❤️ by [Rafi Shariar](https://github.com/Rafi-Shariar)
-> Full Stack Web Developer | 3rd Year CSE Student, Daffodil International University
-
-```
-
----
-
-You're all set! Let me know if you want to reuse this format for other projects or need badges, screenshots, or tech stack icons in your README too.
-```
