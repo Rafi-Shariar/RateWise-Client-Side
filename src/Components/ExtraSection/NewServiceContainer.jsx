@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
-import img1 from '../../assets/PeopleImages/image1.jpg';
-import img2 from '../../assets/PeopleImages/image2.jpg';
-import img3 from '../../assets/PeopleImages/image3.jpg';
+import img1 from "../../assets/PeopleImages/image1.jpg";
+import img2 from "../../assets/PeopleImages/image2.jpg";
+import img3 from "../../assets/PeopleImages/image3.jpg";
 const NewServiceContainer = () => {
   return (
     <div>
@@ -29,17 +29,27 @@ const NewServiceContainer = () => {
 
         {/* section 2 */}
         <div className="lg:w-1/2 flex gap-5 justify-center items-center">
-          
           <div className="-mt-14">
-            <img src={img1} alt="" className="h-[250px] w-[150px] rounded-2xl"/>
+            <img
+              src={img1}
+              alt=""
+              className="md:h-[250px] w-[150px] rounded-2xl"
+            />
           </div>
           <div className="mt-14">
-            <img src={img2} alt="" className="h-[250px] w-[150px] rounded-2xl"/>
+            <img
+              src={img2}
+              alt=""
+              className="md:h-[250px] w-[150px] rounded-2xl"
+            />
           </div>
           <div className="">
-            <img src={img3} alt="" className="h-[250px] w-[150px] rounded-2xl"/>
+            <img
+              src={img3}
+              alt=""
+              className="md:h-[250px] w-[150px] rounded-2xl"
+            />
           </div>
-        
         </div>
       </div>
     </div>

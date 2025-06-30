@@ -8,11 +8,11 @@ const FeaturedServiceCard = ({ featured }) => {
   const { _id, image, title, description, price,category,companyName } = featured;
 
   return (
-    <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl hover:bg-sky-50"
+    <motion.div className="shadow-lg p-5 min-h-[200px] rounded-xl hover:bg-sky-50 grid border border-blue-50"
     whileHover={{ scale: 1.1 }}
             
             >
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-5 items-center ">
         <figure className="">
           <img src={image} alt={title} className=" w-10" />
         </figure>
@@ -30,7 +30,7 @@ const FeaturedServiceCard = ({ featured }) => {
       
       </div>
 
-      <div className="flex justify-between items-center mt-5">
+      <div className="flex justify-between items-center mt-4">
           <span className="btn bg-base-300 border-0 text-green-700">
             {price} $
           </span>
