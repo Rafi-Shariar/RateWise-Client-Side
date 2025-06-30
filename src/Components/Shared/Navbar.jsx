@@ -27,7 +27,7 @@ const Navbar = () => {
   const loggedInLinks = (
     <>
       <NavLink to={"/"}>Home</NavLink>
-      <NavLink to={"/services"}>Services</NavLink>
+      <NavLink to={"/services"}>ServicesI</NavLink>
       <NavLink to={"/addservices"}>Add Service</NavLink>
       <NavLink to={"/myservices"}>My Services</NavLink>
       <NavLink to={"/myreviews"}>My Reviews</NavLink>
