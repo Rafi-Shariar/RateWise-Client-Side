@@ -10,6 +10,8 @@ import AddServicesPage from "../Pages/AddServicesPage";
 import MyServicesPage from "../Pages/MyServicesPage";
 import MyReviewsPage from "../Pages/MyReviewsPage";
 import PageNotFound from "../Pages/PageNotFound";
+import AboutUsPage from "../Pages/AboutUsPage";
+import ContactPage from "../Pages/ContactPage";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
             },
             { path:'/registration', element:<RegistrationPage></RegistrationPage>},
             { path:'/login', element:<LoginPage></LoginPage>},
+            { path:'/aboutus', element:<AboutUsPage></AboutUsPage>},
+            { path:'/contact', element:<ContactPage></ContactPage>},
             { path:'/addservices', element:<PrivateRoute><AddServicesPage></AddServicesPage></PrivateRoute>},
             { path:'/myservices', element:<PrivateRoute><MyServicesPage></MyServicesPage></PrivateRoute>},
             { path:'/myreviews', element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>},

@@ -32,6 +32,7 @@ const MyReviewCard = ({ review, setUpdate }) => {
     return (
       <tr className="flex justify-center items-center w-full">
         <td><span className="loading loading-dots loading-xl"></span></td>
+       
 
       </tr>
     );
@@ -101,7 +102,8 @@ const MyReviewCard = ({ review, setUpdate }) => {
 
   return (
     <tr className="">
-      <td>
+      <td className="hover:bg-sky-50">
+        <Link to={`/services/${serviceData._id}`}>
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
@@ -116,22 +118,18 @@ const MyReviewCard = ({ review, setUpdate }) => {
             <div className="text-sm opacity-50">{serviceData.companyName}</div>
           </div>
         </div>
+        </Link>
       </td>
 
       <td>
         <Rating style={{ maxWidth: 100 }} value={review.rating} readOnly />
       </td>
 
-      <td>{review.description.slice(0, 50)}…</td>
+      <td className="text-xs text-slate-500">{review.description.slice(0, 50)}…</td>
       <td>{review.addedDate}</td>
 
       <td className="flex gap-3 mt-4">
-        <Link
-          to={`/services/${serviceData._id}`}
-          className="btn btn-soft btn-warning"
-        >
-          <FiExternalLink /> Explore
-        </Link>
+       
 
         <button
           className="btn btn-soft btn-success"
