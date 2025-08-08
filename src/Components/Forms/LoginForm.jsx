@@ -80,7 +80,7 @@ const LoginForm = () => {
       });
   };
   return (
-    <motion.div className="lg:w-2/3 bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl"
+    <motion.div className="max-w-[500px] bg-linear-to-r from-cyan-100 to-blue-100 p-7 rounded-2xl"
     initial={{ y: 150, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 50, damping: 15 }}>
