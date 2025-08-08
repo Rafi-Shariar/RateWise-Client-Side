@@ -9,7 +9,6 @@ const RootLayout = () => {
         <div>
             <ScrollToTop/>
             <Navbar></Navbar>
-            //Outlet Section
             <section className='max-w-7xl mx-auto min-h-screen'>
                 <Outlet></Outlet>
             </section>
