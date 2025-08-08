@@ -19,7 +19,7 @@ const ReviewCard = ({review}) => {
     
     return (
         <div className='mx-5'>
-             <div className="border rounded-2xl border-sky-300 overflow-hidden shadow-xl max-w-[250px]">
+             <div className="border rounded-2xl border-sky-300 overflow-hidden shadow-xl max-w-[320px]">
                   {/* section 1 */}
                   <div className="flex items-center gap-2 p-3  bg-sky-100">
                     <div className="avatar">
