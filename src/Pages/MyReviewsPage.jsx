@@ -56,7 +56,7 @@ const MyReviewsPage = () => {
               {/* head */}
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Service</th>
                   <th>Rating</th>
                   <th>Review</th>
                   <th>Review Date</th>
